@@ -1,11 +1,31 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import "../styles/index.css";
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<section id="section1">
+            <div class="bg-image" style="background-image: url('/img/img1.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img2.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img3.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img4.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img5.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img6.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img7.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img8.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img9.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img10.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img11.jpg');"></div>
+            <div class="bg-image" style="background-image: url('/img/img12.jpg');"></div>
+
+            <div class="title-subsection">
+                <img src="/img/logo-section.png" alt="logo-section">
+            </div>
+            
+        </section>
+	</main>
+	<script>
+        import "../scripts/index";
+	</script>
 </Layout>

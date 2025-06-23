@@ -1,3 +1,7 @@
+---
+import Header from "../components/Header.astro"
+import FullMenu from "../components/FullMenu.astro"
+---
 <!doctype html>
 <html lang="en">
 	<head>
@@ -8,7 +12,12 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<Header></Header>
+		<FullMenu></FullMenu>
 		<slot />
+
+		
+	<script type="module" src="/src/scripts/layout.js"></script>
 	</body>
 </html>
 

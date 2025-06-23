@@ -1,0 +1,97 @@
+* {
+    scrollbar-width: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    background: rgb(255, 255, 255);
+    background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(161, 161, 161, 1) 0%, rgba(101, 101, 101, 1) 0%, rgba(60, 60, 60, 1) 0%, rgba(24, 24, 24, 1) 64%, rgba(0, 0, 0, 1) 100%);
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+  }
+  
+  #section1 {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bg-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    /* Asegura que la imagen no se repita */
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+    filter: brightness(0.5);
+  }
+  
+  .bg-image.active {
+    opacity: 0.8;
+  
+  }
+  
+  .title-subsection {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .title-subsection img {
+    width: 60vw;
+    height: auto;
+    animation: easeInBlur 1.5s ease-out forwards;
+  }
+  
+  /* Animación que hace aparecer la imagen con el efecto de blur */
+  @keyframes easeInBlur {
+    from {
+      opacity: 0;
+      transform: translateX(-40px);
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+      filter: blur(0);
+    }
+  }
+  
+  
+
+  /*
+
+RESPONSIVE
+
+*/
+
+
+/* Estilos responsivos */
+@media (max-width: 560px) {
+  .title-first-line{
+    font-size: 50px;
+  }
+  .title-second-line{
+    font-size: 40px;
+  }
+}

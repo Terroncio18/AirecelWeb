@@ -1,0 +1,10 @@
+{
+  "header": {
+    "menu": "Menu",
+    "booking": "Booking",
+    "facilities": "The Restaurant",
+    "blog": "Blog",
+    "events": "Events",
+    "contact": "Contact"
+  }
+}

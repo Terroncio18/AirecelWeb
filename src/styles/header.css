@@ -1,0 +1,463 @@
+/*
+Header
+*/
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+#header-navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    padding-right: 3rem;
+    padding-left: 3rem;
+
+}
+
+.logo-container img {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+}
+
+.nav-list-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 5vw;
+}
+
+.nav-list-right a {
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    width: 150px;
+    /* O el tamaño que prefieras */
+    text-align: center;
+    /* Centra el texto dentro del ancho fijo */
+    white-space: nowrap;
+    /* Evita que el texto haga salto de línea */
+    font-size: 24px;
+}
+
+.nav-address {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    font-size: 30px;
+    white-space: nowrap;
+    /* Ajusta el tamaño de la fuente si lo necesitas */
+    transition: color 0.3s ease;
+    /* Transición suave para el color */
+}
+
+.nav-address.close {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideOut 0.5s ease-out forwards;
+}
+
+/* Animación de desvanecimiento y movimiento hacia la izquierda */
+@keyframes slideOut {
+    0% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(-100%);
+        pointer-events: none;
+    }
+}
+
+.nav-address::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    /* Color del subrayado */
+    left: 50%;
+    /* Iniciar en el centro del texto */
+    bottom: 0;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-address:hover::after {
+    width: 100%;
+    /* El subrayado se expande al 100% */
+    left: 0;
+    /* El subrayado empieza desde el borde izquierdo */
+}
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5rem;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.social-icons-sm {
+    display: none;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    z-index: 1;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.social-icon-sm {
+    width: 23px;
+    height: 23px;
+}
+
+.social-icon,
+.social-icon-sm {
+    transition: transform 0.3s ease-in-out;
+    /* Suaviza la animación */
+}
+
+.social-icon:hover,
+.social-icon-sm:hover {
+    transform: scale(1.3);
+}
+
+.social-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+.flags-sm {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 3rem;
+    z-index: 1;
+    color: white;
+}
+
+.flags__item-sm {
+    width: 20px;
+    height: 15px;
+    color: white;
+    font-size: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 1s ease-out filter 1s ease;
+}
+
+.flags__item-sm img {
+    width: 100%;
+    height: 100%;
+}
+
+.flags__item-sm:hover {
+    transform: scale(1.4);
+    /* Aumenta el tamaño de la imagen al 120% */
+    filter: brightness(1.2);
+    /* Aumenta el brillo de la imagen */
+}
+
+.toggle-menu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Menú a pantalla completa */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    /* Fondo negro semi-transparente */
+    display: none;
+    /* Oculto por defecto */
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    z-index: 110;
+    /* Menú encima de todo */
+    clip-path: circle(0% at var(--menu-origin-x) var(--menu-origin-y));
+    /* Empezar desde un círculo pequeño */
+    transition: background-color 0.5s ease;
+    /* Fondo con transición */
+    animation: expandMenu 0.8s ease-out forwards;
+    /* Animación de expansión */
+}
+
+.nav-container-sm {
+    position: fixed;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1;
+
+}
+
+.nav-container-sm2 {
+    display: flex;
+    position: fixed;
+    bottom: 8vh;
+    left: 50%;
+    transform: translateX(-50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    z-index: 1;
+}
+
+.button-tm {
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    width: 200px;
+    background-color: rgba(8, 8, 8, 0.89);
+    box-shadow: 0px 0px 30px rgba(227, 228, 237, 0.219);
+    border: 1.5px solid rgb(255, 255, 255);
+    display: inline-block;
+    /* Asegura que el a sea un bloque de nivel de bloque */
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.button-tm:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+@keyframes expandMenu {
+    0% {
+        clip-path: circle(0% at var(--menu-origin-x) var(--menu-origin-y));
+        /* Comienza en el centro del botón */
+    }
+
+    100% {
+        clip-path: circle(150% at var(--menu-origin-x) var(--menu-origin-y));
+        /* Expande el círculo a toda la pantalla */
+    }
+}
+
+
+/* Animación de cierre en reversa */
+@keyframes collapseMenu {
+    0% {
+        clip-path: circle(150% at var(--menu-origin-x) var(--menu-origin-y));
+        /* Empieza desde el círculo expandido */
+    }
+
+    100% {
+        clip-path: circle(0% at var(--menu-origin-x) var(--menu-origin-y));
+        /* Regresa a un círculo pequeño */
+    }
+}
+
+/* Cuando el menú está abierto */
+.menu.open {
+    display: flex;
+    /* Mostrar el menú */
+    animation: expandMenu 0.8s ease-out forwards;
+}
+
+/* Cuando el menú está cerrado */
+.menu.closing {
+    display: flex;
+    animation: collapseMenu 0.8s ease-out forwards;
+}
+
+/* Estilos para el botón de cerrar */
+/* Las líneas del SVG dentro del botón */
+.toggle-menu.close .line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Efecto hover - Cambio del icono de la X a una cruz */
+.toggle-menu.close:hover .line1 {
+    transform: rotate(45deg) translateY(8px);
+}
+
+.toggle-menu.close:hover .line2 {
+    opacity: 0;
+    /* Oculta la línea del medio */
+}
+
+.toggle-menu.close:hover .line3 {
+    transform: rotate(-45deg) translateY(-8px);
+}
+
+.toggle-menu.open .line {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+}
+
+/* Efecto hover - Cambio del icono de la X a una cruz */
+.toggle-menu.open:hover .line1 {
+    transform: translateY(-2px);
+}
+
+.toggle-menu.open:hover .line2 {
+    transform: scale(0.7);
+}
+
+.toggle-menu.open:hover .line3 {
+    transform: translateY(2px);
+}
+
+.background-sm {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-image: url('/assets/home-sec1/img1.jpg');
+    filter: brightness(0.2);
+}
+
+
+.nav-container-dynamic {
+    display: flex;
+    justify-content: flex-start;
+    /* Alinea los elementos de izquierda a derecha */
+    gap: 20px;
+    /* Espacio entre los elementos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo de cada enlace dentro del contenedor */
+.nav-address {
+    opacity: 0;
+    /* Empieza invisible */
+    transform: translateX(-50px);
+    /* Comienza desplazado a la izquierda */
+    animation: slideIn 0.6s ease-out forwards;
+    /* Aparece con un efecto de deslizamiento */
+}
+
+.nav-address-sm {
+    font-size: 30px;
+}
+
+/* Animación de deslizamiento y aumento de opacidad */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+
+    }
+}
+
+/* Secuencia de la aparición de los elementos */
+.nav-address:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.nav-address:nth-child(2) {
+    animation-delay: 0.3s;
+    /* El segundo elemento aparece después de 0.3s */
+}
+
+.nav-address:nth-child(3) {
+    animation-delay: 0.6s;
+    /* El tercer elemento aparece después de 0.6s */
+}
+
+.nav-address:nth-child(4) {
+    animation-delay: 0.9s;
+    /* El cuarto elemento aparece después de 0.9s */
+}
+
+.nav-address:nth-child(5) {
+    animation-delay: 1.2s;
+    /* El quinto elemento aparece después de 1.2s */
+}
+
+.nav-address:nth-child(6) {
+    animation-delay: 1.5s;
+    /* El quinto elemento aparece después de 1.2s */
+}
+
+/*
+
+RESPONSIVE
+
+*/
+
+
+/* Estilos responsivos */
+@media (max-width: 850px) {
+
+    .nav-list-right a,
+    .social-icons {
+        display: none;
+        /* Oculta en dispositivos móviles */
+    }
+
+    .social-icons-sm {
+        display: flex;
+    }
+
+    .flags-sm {
+        gap: 1.5rem;
+    }
+
+    .toggle-menu {
+        display: block;
+        /* Siempre visible */
+    }
+
+    #header-navbar {
+        padding-left: 2rem;
+    }
+
+    .logo-container img{
+        width: 75px;
+        height: 75px;
+    }
+
+
+}
+
+@media (min-width: 851px) {
+
+    .nav-container-sm2{
+        bottom: 20vh;
+    }
+}

@@ -1,24 +1,44 @@
 ---
-// src/components/Header.astro
+// src/components/FullMenu.astro
 import "../styles/header.css";
 ---
 
-<header>
-    <div id="header-navbar">
-        <a href="/">
-            <div class="logo-container">
-                <img src="/logo.png" alt="Logo" />
-            </div>
-        </a>
+<div id="fullScreenMenu" class="menu">
+    <div class="background-sm"></div>
 
-        <div class="social-icons" id="icons">
+    <nav class="nav-container-sm" id="nav-container-sm"></nav>
+
+    <div class="nav-container-sm2">
+        <div class="flags-sm">
+            <div class="flags__item-sm" data-language="es">
+                <img src="/img/es.svg" alt="es" />
+                <span>ES</span>
+            </div>
+            <span>|</span>
+            <div class="flags__item-sm" data-language="fr">
+                <img src="/img/fr.svg" alt="fr" />
+                <span>FR</span>
+            </div>
+            <span>|</span>
+            <div class="flags__item-sm" data-language="en">
+                <img src="/img/gb.svg" alt="en" />
+                <span>EN</span>
+            </div>
+            <span>|</span>
+            <div class="flags__item-sm" data-language="de">
+                <img src="/img/de.svg" alt="de" />
+                <span>DE</span>
+            </div>
+        </div>
+
+        <div class="social-icons-sm">
+            <!-- Idèntics enllaços socials que el Header -->
             <a
                 href="https://www.facebook.com/Airecelrestaurant"
+                class="social-icon-sm"
                 target="_blank"
-                id="facebook"
-                class="social-icon"
+                id="facebook-sm"
             >
-                <!-- SVG Facebook -->
                 <svg
                     fill="#ffffff"
                     width="20px"
@@ -37,12 +57,11 @@ import "../styles/header.css";
                 </svg>
             </a>
             <a
-                href="https://www.instagram.com/airecelrestaurant"
+                href="https://www.instagram.com/airecelrestaurant/?locale=en_US%2Cen_GB&hl=ar"
+                class="social-icon-sm"
                 target="_blank"
-                id="instagram"
-                class="social-icon"
+                id="instagram-sm"
             >
-                <!-- SVG Instagram -->
                 <svg
                     width="20px"
                     height="20px"
@@ -66,12 +85,11 @@ import "../styles/header.css";
                 </svg>
             </a>
             <a
-                href="https://www.tripadvisor.es/..."
+                href="https://www.tripadvisor.es/Restaurant_Review-g3607602-d1852813-Reviews-Airecel_Restaurant-Port_de_Soller_Soller_Majorca_Balearic_Islands.html"
+                class="social-icon-sm"
                 target="_blank"
-                id="tripadvisor"
-                class="social-icon"
+                id="tripadvisor-sm"
             >
-                <!-- SVG TripAdvisor -->
                 <svg
                     fill="#ffffff"
                     version="1.1"
@@ -130,52 +148,5 @@ import "../styles/header.css";
                 </svg>
             </a>
         </div>
-
-        <div class="nav-list-right">
-            <button
-                class="toggle-menu open"
-                id="toggleMenuBtn"
-                aria-label="Abrir menú"
-            >
-                <!-- SVG menú hamburguesa -->
-                 <svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 30 30"
-							width="40"
-							height="40"
-						>
-							<rect
-								x="0"
-								y="0"
-								width="30"
-								height="30"
-								fill="transparent"></rect>
-							<line
-								class="line line1"
-								x1="5"
-								y1="7"
-								x2="25"
-								y2="7"
-								stroke="white"
-								stroke-width="2"></line>
-							<line
-								class="line line2"
-								x1="5"
-								y1="15"
-								x2="25"
-								y2="15"
-								stroke="white"
-								stroke-width="2"></line>
-							<line
-								class="line line3"
-								x1="5"
-								y1="23"
-								x2="25"
-								y2="23"
-								stroke="white"
-								stroke-width="2"></line>
-						</svg>
-            </button>
-        </div>
     </div>
-</header>
+</div>

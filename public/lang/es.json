@@ -1,0 +1,10 @@
+{
+  "header": {
+    "menu": "Menu",
+    "booking": "Reservar",
+    "facilities": "El Restaurante",
+    "blog": "Blog",
+    "events": "Eventos",
+    "contact": "Contacto"
+  }
+}

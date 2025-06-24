@@ -1,0 +1,37 @@
+// src/scripts/language.js
+
+export async function changeLanguage(language) {
+	try {
+		const response = await fetch(`/lang/${language}.json`);
+		if (!response.ok) throw new Error(`Error loading language: ${language}`);
+
+		const langData = await response.json();
+		window.currentLang = langData;
+
+		// Guardar tanto el idioma como el contenido
+		localStorage.setItem("preferredLanguage", language);
+		
+		document.dispatchEvent(new CustomEvent("languageChanged", {
+			detail: { language }
+		}));
+	} catch (error) {
+		console.error("Error al cargar el idioma:", error);
+	}
+}
+
+export function initLanguage() {
+	const flagsElements = document.querySelectorAll(".lang_flags");
+	const savedLanguage = localStorage.getItem("preferredLanguage") || "es";
+
+	changeLanguage(savedLanguage);
+
+	flagsElements.forEach(flagsContainer => {
+		flagsContainer.addEventListener("click", (e) => {
+			const clicked = e.target.closest(".flags__item");
+			if (clicked) {
+				const language = clicked.dataset.language || "es";
+				changeLanguage(language);
+			}
+		});
+	});
+}

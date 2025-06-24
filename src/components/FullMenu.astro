@@ -1,17 +1,25 @@
 ---
-// src/components/FullMenu.astro
 import "../styles/fullMenu.css";
 import SocialIcons from "./socialIcons.astro";
 import LanguageFlags from "./LanguageFlags.astro";
 ---
 
 <div id="fullScreenMenu" class="menu">
-    <div class="background-sm"></div>
+  <div class="background-sm"></div>
 
-    <nav class="nav-container-sm" id="nav-container-sm"></nav>
+  <!-- MENÚ PRINCIPAL -->
+  <section id="main-nav" class="main-navigation">
+    <div id="nav-container-sm"></div>
+  </section>
 
-    <div class="nav-container-sm2">
-        <LanguageFlags></LanguageFlags>
-        <SocialIcons class="social-icons menu-icons"></SocialIcons>
-    </div>
+  <!-- SUBMENÚ EJEMPLO -->
+  <div id="submenu-menu" class="submenu">
+    <button class="back-button">←</button>
+    <div class="submenu-content" id="submenu-content-menu"></div>
+  </div>
+
+  <div class="nav-container-sm2">
+    <LanguageFlags />
+    <SocialIcons class="social-icons menu-icons" />
+  </div>
 </div>

@@ -1,66 +1,48 @@
-// src/scripts/textManager.js
+///  src/scripts/textManager.js
 
-export function updateMainMenu() {
-	const navContainer = document.getElementById("nav-container-sm");
-	if (!navContainer || !window.currentLang?.header) return;
 
-	const newDiv = document.createElement("div");
-	newDiv.classList.add("nav-container-dynamic");
+//Funcion para Actualizar el menu de navegación
 
-	Object.entries(window.currentLang.header).forEach(([key, value]) => {
-		const isObject = typeof value === "object";
-		const label = isObject ? value.title : value;
+export function updateMainMenu(content, containerId = "nav-container-sm", showBack = false) {
+    const navContainer = document.getElementById(containerId);
+    if (!navContainer || !content) return;
 
-		const link = document.createElement("a");
-		link.className = "nav-address-sm comfortaa-regular nav-address";
-		link.textContent = label;
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("nav-container-dynamic");
 
-		if (isObject && value.submenu) {
-			link.href = `#submenu-${key}`;
-			link.dataset.hasSubmenu = "true";
-			createSubmenuSection(key, value.submenu);
-		} else {
-			link.href = `/${key}`;
-		}
+    // Links del menú
+    Object.entries(content).forEach(([key, value]) => {
+        const label = typeof value === "string" ? value : value?.title || key;
 
-		newDiv.appendChild(link);
-	});
+        const link = document.createElement("a");
+        link.className = "nav-address-sm comfortaa-regular nav-address";
+        link.textContent = label;
 
-	navContainer.innerHTML = "";
-	navContainer.appendChild(newDiv);
-}
+        if (key !== "menu" && key !== "blog") {
+            link.href = `/${key}`;
+        }
 
-function createSubmenuSection(key, submenuData) {
-	const existing = document.getElementById(`submenu-${key}`);
-	if (existing) return;
+        newDiv.appendChild(link);
+    });
 
-	const section = document.createElement("section");
-	section.id = `submenu-${key}`;
-	section.className = "submenu hidden";
+     // Botón volver (si aplica)
+    if (showBack) {
+        const backLink = document.createElement("a");
+        backLink.textContent = "←";
+        backLink.className = "back-button";
+        backLink.href = "#";
 
-	// Botón para volver
-	const backBtn = document.createElement("button");
-	backBtn.className = "back-button";
-	backBtn.textContent = "← Volver";
-	backBtn.addEventListener("click", () => {
-		section.classList.add("hidden");
-		document.getElementById("main-nav").classList.remove("hidden");
-	});
+        const handleBack = (e) => {
+            e.preventDefault();
+            document.dispatchEvent(new CustomEvent("backToMainMenu"));
+        };
 
-	const content = document.createElement("div");
-	content.className = "submenu-content";
+        backLink.addEventListener("click", handleBack);
+        backLink.addEventListener("touchstart", handleBack, { passive: true });
 
-	Object.entries(submenuData).forEach(([subKey, label]) => {
-		const subLink = document.createElement("a");
-		subLink.className = "nav-subaddress-sm comfortaa-regular nav-subaddress";
-		subLink.href = `/menu/${subKey}`;
-		subLink.textContent = label;
-		content.appendChild(subLink);
-	});
-
-	section.appendChild(backBtn);
-	section.appendChild(content);
-
-	// Inserta el submenu después del menú principal
-	document.getElementById("fullScreenMenu").appendChild(section);
+        newDiv.appendChild(backLink);
+    }
+    
+    navContainer.innerHTML = '';
+    navContainer.appendChild(newDiv);
 }

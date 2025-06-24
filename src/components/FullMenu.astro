@@ -5,21 +5,14 @@ import LanguageFlags from "./LanguageFlags.astro";
 ---
 
 <div id="fullScreenMenu" class="menu">
-  <div class="background-sm"></div>
+    <div class="background-sm"></div>
 
-  <!-- MENÚ PRINCIPAL -->
-  <section id="main-nav" class="main-navigation">
-    <div id="nav-container-sm"></div>
-  </section>
+    <section id="main-nav" class="main-navigation">
+        <div id="nav-container-sm" class="nav-container-sm"></div>
 
-  <!-- SUBMENÚ EJEMPLO -->
-  <div id="submenu-menu" class="submenu">
-    <button class="back-button">←</button>
-    <div class="submenu-content" id="submenu-content-menu"></div>
-  </div>
-
-  <div class="nav-container-sm2">
-    <LanguageFlags />
-    <SocialIcons class="social-icons menu-icons" />
-  </div>
+        <div class="nav-container-sm2">
+            <LanguageFlags />
+            <SocialIcons class="social-icons menu-icons" />
+        </div>
+    </section>
 </div>

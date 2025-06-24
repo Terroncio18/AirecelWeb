@@ -1,39 +1,52 @@
 // src/scripts/fullMenu.js
+
 import { updateMainMenu } from "./textManager.js";
 
+let currentContentKey = "header";
+let currentContainerId = "nav-container-sm";
+
 export function initFullMenu() {
-	updateMainMenu(); // Primera carga
+	renderCurrentMenu();
 
-	// Escuchar cambios de idioma
+	// Cambiar idioma → mantener la sección actual
 	document.addEventListener("languageChanged", () => {
-		updateMainMenu();
+		renderCurrentMenu();
 	});
 
-	// Escuchar clicks en botones de submenú
+	// Clic en un enlace de menú
 	document.addEventListener("click", (e) => {
-		const btn = e.target.closest("[data-submenu]");
-		if (!btn) return;
+		const target = e.target.closest("a");
+		if (!target || !document.getElementById(currentContainerId)?.contains(target)) return;
 
-		const submenuId = btn.dataset.submenu;
-		const submenu = document.getElementById(submenuId);
-		const mainNav = document.getElementById("main-nav");
+		const clickedText = target.textContent.toLowerCase();
+		const menuTitle = window.currentLang?.header?.menu?.title?.toLowerCase();
 
-		if (submenu && mainNav) {
-			submenu.classList.add("active");
-			mainNav.classList.add("hidden");
+		if (clickedText === menuTitle) {
+			e.preventDefault();
+			currentContentKey = "submenu";
+			renderCurrentMenu();
 		}
 	});
 
-	// Escuchar clicks en botones de "volver"
-	document.addEventListener("click", (e) => {
-		if (e.target.classList.contains("back-button")) {
-			const submenu = e.target.closest(".submenu");
-			const mainNav = document.getElementById("main-nav");
-
-			if (submenu && mainNav) {
-				submenu.classList.remove("active");
-				mainNav.classList.remove("hidden");
-			}
-		}
+	// Evento personalizado para volver atrás
+	document.addEventListener("backToMainMenu", () => {
+		currentContentKey = "header";
+		renderCurrentMenu();
 	});
+}
+
+function renderCurrentMenu() {
+	let content;
+	let showBack = false;
+
+	if (currentContentKey === "submenu") {
+		content = window.currentLang?.header?.menu?.submenu;
+		showBack = true;
+	} else {
+		content = window.currentLang?.[currentContentKey];
+	}
+
+	if (content) {
+		updateMainMenu(content, currentContainerId, showBack);
+	}
 }

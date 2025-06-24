@@ -1,7 +1,17 @@
 {
   "header": {
-    "menu": "Menu",
-    "booking": "Booking",
+    "menu": {
+      "title": "Menu",
+      "submenu": {
+        "carta": "À la Carte",
+        "special": "Special Menu",
+        "snack": "Snack Menu",
+        "group": "Group Menus",
+        "wines": "Our Wines",
+        "drinks": "Drinks"
+      }
+    },
+    "booking": "Book a Table",
     "facilities": "The Restaurant",
     "blog": "Blog",
     "events": "Events",

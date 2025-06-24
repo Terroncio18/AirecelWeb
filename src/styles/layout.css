@@ -1,0 +1,57 @@
+/* Reset básico */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Tipografía general */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #000; /* o blanco si lo prefieres */
+    color: white;
+    line-height: 1.6;
+}
+
+/* Enlaces generales */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Variables CSS */
+:root {
+    --main-font: 'Inter', sans-serif;
+    --accent-color: #ffd700;
+    --header-height: 100px;
+    --mobile-breakpoint: 850px;
+}
+
+/* Clases utilitarias */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Imágenes responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Ocultar elementos visualmente pero no para lectores de pantalla */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}

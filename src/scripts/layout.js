@@ -48,7 +48,7 @@ window.addEventListener('click', (e) => {
 
 
 //Language Variables
-const flagsElements = document.querySelectorAll(".flags-sm");
+const flagsElements = document.querySelectorAll(".lang_flags");
 
 //Cambia el idioma y dispara el evento
 const changeLanguage = async (language) => {
@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Escuchar clicks en banderas
     flagsElements.forEach(flagsContainer => {
         flagsContainer.addEventListener("click", (e) => {
-            const clickedElement = e.target.closest(".flags__item-sm");
+            const clickedElement = e.target.closest(".flags__item");
             if (clickedElement) {
                 const language = clickedElement.dataset.language || "es";
                 changeLanguage(language);

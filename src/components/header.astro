@@ -3,10 +3,15 @@
 import "../styles/header.css";
 import SocialIcons from "./socialIcons.astro";
 
-const isEventsPage = Astro.url.pathname === '/events';
+const pathname = Astro.url.pathname;
+const headerClass = pathname === '/events'
+  ? 'events-page'
+  : pathname === '/facilities'
+    ? 'facilities-page'
+    : '';
 ---
 
-<header id="main-header" class={isEventsPage ? "events-page" : ""}>
+<header id="main-header" class={headerClass}>
     <div id="header-navbar">
         <a href="/">
             <div class="logo-container">

@@ -18,30 +18,40 @@ export function initMenu() {
 	}
 
 	function toggleMenu() {
-	updateMenuOrigin();
-	const isOpen = fullScreenMenu.classList.contains('open');
-	const header = document.getElementById('main-header');
+		updateMenuOrigin();
+		const isOpen = fullScreenMenu.classList.contains('open');
+		const header = document.getElementById('main-header');
+		const path = window.location.pathname;
 
-	if (isOpen) {
-		fullScreenMenu.classList.add('closing');
-		fullScreenMenu.classList.remove('open');
-		toggleMenuBtn.classList.remove('open');
-		toggleMenuBtn.classList.add('close');
+		if (!header) return;
 
-		// Restaurar clase del header si estabas en events
-		if (header && window.location.pathname === "/events") {
-			header.classList.add("events-page");
+		// Eliminar clases existentes
+		header.classList.remove("events-page", "facilities-page");
+
+		if (isOpen) {
+			fullScreenMenu.classList.add('closing');
+			fullScreenMenu.classList.remove('open');
+			toggleMenuBtn.classList.remove('open');
+			toggleMenuBtn.classList.add('close');
+
+			// Restaurar clase de fondo oscuro según la página actual
+			if (path === "/events") {
+				header.classList.add("events-page");
+			} else if (path === "/facilities") {
+				header.classList.add("facilities-page");
+			}
+		} else {
+			fullScreenMenu.classList.add('open');
+			fullScreenMenu.classList.remove('closing');
+			toggleMenuBtn.classList.add('open');
+			toggleMenuBtn.classList.remove('close');
+
+			// Hacer transparente el fondo eliminando clases
+			// (ya lo hicimos arriba)
 		}
-	} else {
-		fullScreenMenu.classList.add('open');
-		fullScreenMenu.classList.remove('closing');
-		toggleMenuBtn.classList.add('open');
-		toggleMenuBtn.classList.remove('close');
-
-		// Eliminar clase del header para hacer fondo transparente
-		header?.classList.remove("events-page");
 	}
-}
+
+
 
 
 

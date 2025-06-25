@@ -33,7 +33,11 @@ export function updateMainMenu(content, containerId = "nav-container-sm", showBa
                 link.href = submenuPDFs[key];
                 link.target = "_blank"; // Abrir en nueva pestaña
                 link.rel = "noopener noreferrer";
-            } else {
+            } else if(key=="booking"){
+                link.href= "https://reservation.dish.co/widget/hydra-0011i000002k8B8AAI";
+                link.target = "_blank"; // Abrir en nueva pestaña
+                link.rel = "noopener noreferrer";
+            }else{
                 link.href = `/${key}`;
             }
         }

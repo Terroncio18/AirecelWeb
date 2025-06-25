@@ -18,18 +18,32 @@ export function initMenu() {
 	}
 
 	function toggleMenu() {
-		if (fullScreenMenu.classList.contains('open')) {
-			updateMenuOrigin();
-			fullScreenMenu.classList.add('closing');
-			fullScreenMenu.classList.remove('open');
-		} else {
-			updateMenuOrigin();
-			fullScreenMenu.classList.add('open');
-			fullScreenMenu.classList.remove('closing');
+	updateMenuOrigin();
+	const isOpen = fullScreenMenu.classList.contains('open');
+	const header = document.getElementById('main-header');
+
+	if (isOpen) {
+		fullScreenMenu.classList.add('closing');
+		fullScreenMenu.classList.remove('open');
+		toggleMenuBtn.classList.remove('open');
+		toggleMenuBtn.classList.add('close');
+
+		// Restaurar clase del header si estabas en events
+		if (header && window.location.pathname === "/events") {
+			header.classList.add("events-page");
 		}
-		toggleMenuBtn.classList.toggle('open');
-		toggleMenuBtn.classList.toggle('close');
+	} else {
+		fullScreenMenu.classList.add('open');
+		fullScreenMenu.classList.remove('closing');
+		toggleMenuBtn.classList.add('open');
+		toggleMenuBtn.classList.remove('close');
+
+		// Eliminar clase del header para hacer fondo transparente
+		header?.classList.remove("events-page");
 	}
+}
+
+
 
 	toggleMenuBtn.addEventListener('click', toggleMenu);
 

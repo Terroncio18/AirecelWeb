@@ -1,8 +1,8 @@
 ///  src/scripts/textManager.js
 
-
-//Funcion para Actualizar el menu de navegación
-
+////////////////////////////////////////////////////
+//             Funciones fullMenu.astro           //
+////////////////////////////////////////////////////
 export function updateMainMenu(content, containerId = "nav-container-sm", showBack = false) {
     const navContainer = document.getElementById(containerId);
     if (!navContainer || !content) return;
@@ -45,4 +45,83 @@ export function updateMainMenu(content, containerId = "nav-container-sm", showBa
     
     navContainer.innerHTML = '';
     navContainer.appendChild(newDiv);
+}
+
+
+////////////////////////////////////////////////////
+//             Funciones events.astro           //
+////////////////////////////////////////////////////
+
+
+function isWithinNext30Days(dateStr) {
+	const today = new Date();
+	const target = new Date(dateStr);
+	const diff = target - today;
+	const diffInDays = diff / (1000 * 60 * 60 * 24);
+	return diffInDays >= 0 && diffInDays <= 30;
+}
+
+export async function renderEvents(containerId = "events-list") {
+	const container = document.getElementById(containerId);
+	if (!container)return;
+
+	container.innerHTML = "Cargando eventos...";
+
+	try {
+		const lang = localStorage.getItem("preferredLanguage") || "es";
+
+		const res = await fetch("/lang/events.json");
+		const events = await res.json();
+
+		container.innerHTML = "";
+
+		const allEvents = [
+			...events.oneTime
+				.filter(e => isWithinNext30Days(e.date))
+				.map(e => ({ ...e, recurring: false })),
+			...events.recurring.map(e => ({ ...e, recurring: true }))
+		];
+
+		allEvents.sort((a, b) => {
+			if (a.recurring && b.recurring) return 0;
+			if (a.recurring) return 1;
+			if (b.recurring) return -1;
+			return new Date(a.date) - new Date(b.date);
+		});
+
+		allEvents.forEach(event => {
+			const card = document.createElement("div");
+			card.className = "event-card";
+
+			const img = document.createElement("img");
+			img.src = event.image;
+			img.alt = event.name;
+
+			const info = document.createElement("div");
+			info.className = "event-info";
+
+			const title = document.createElement("h3");
+			title.textContent = event.name;
+
+			const date = document.createElement("p");
+			date.className = "event-date";
+
+			if (event.recurring) {
+				const days = event.days?.[lang] || event.days?.es || [];
+				date.textContent = `${days.join(", ")} — ${event.time}`;
+			} else {
+				date.textContent = `${event.date} — ${event.time}`;
+			}
+
+			info.appendChild(title);
+			info.appendChild(date);
+			card.appendChild(img);
+			card.appendChild(info);
+
+			container.appendChild(card);
+		});
+	} catch (err) {
+		console.error("Error al cargar eventos:", err);
+		container.innerHTML = "No se pudieron cargar los eventos.";
+	}
 }

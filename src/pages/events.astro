@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import "../styles/events.css";
+---
+
+<Layout>
+    <main>
+        <section class="events-header">
+            <h1>Próximos Eventos</h1>
+            <p>Disfruta de música en vivo cada semana</p>
+        </section>
+
+        <section>
+            <div id="events-list" class="events-carousel">
+                <!-- Aquí se inyectarán las tarjetas desde textManager.js -->
+            </div>
+        </section>
+    </main>
+
+    <script type="module">
+	document.addEventListener("DOMContentLoaded", () => {
+		import("../src/scripts/textManager.js").then(({ renderEvents }) => {
+			renderEvents();
+		});
+	});
+</script>
+</Layout>

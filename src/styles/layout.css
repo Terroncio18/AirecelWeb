@@ -25,8 +25,12 @@ a {
 :root {
     --main-font: 'Inter', sans-serif;
     --accent-color: #ffd700;
-    --header-height: 100px;
+    --header-height: 150px;
     --mobile-breakpoint: 850px;
+}
+
+main {
+  padding-top: var(--header-height);
 }
 
 /* Clases utilitarias */

@@ -8,9 +8,15 @@
     align-items: center;
 }
 
+
+
 body {
     background: rgb(255, 255, 255);
     background: radial-gradient(circle, rgba(255, 255, 255, 1) 0%, rgba(161, 161, 161, 1) 0%, rgba(101, 101, 101, 1) 0%, rgba(60, 60, 60, 1) 0%, rgba(24, 24, 24, 1) 64%, rgba(0, 0, 0, 1) 100%);
+}
+
+main {
+  padding-top: 0;
 }
 
 section {

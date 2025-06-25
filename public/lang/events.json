@@ -1,0 +1,112 @@
+{
+    "recurring": [
+        {
+            "name": "David Soriano",
+            "instrument": "Piano",
+            "image": "/img/events/david-soriano.jpg",
+            "days": {
+                "es": [
+                    "Lunes"
+                ],
+                "en": [
+                    "Monday"
+                ],
+                "fr": [
+                    "Lundi"
+                ],
+                "de": [
+                    "Montag"
+                ]
+            },
+            "time": "19:30-21:30"
+        },
+        {
+            "name": "Marcelo Pinto",
+            "instrument": "Saxofón",
+            "image": "/img/events/marcelo-pinto.jpg",
+            "days": {
+                "es": [
+                    "Miércoles"
+                ],
+                "en": [
+                    "Wednesday"
+                ],
+                "fr": [
+                    "Mercredi"
+                ],
+                "de": [
+                    "Mittwoch"
+                ]
+            },
+            "time": "19:30-21:30"
+        }
+    ],
+    "oneTime": [
+        {
+            "name": "One Man Rocks",
+            "image": "/img/events/one-man-rocks.jpg",
+            "date": "2025-06-29",
+            "time": "20:30-22:00"
+        },
+        {
+            "name": "Drop Step Jazz",
+            "image": "/img/events/drop-step-jazz.jpg",
+            "date": "2025-07-06",
+            "time": "19:30-21:30"
+        },
+        {
+            "name": "One Man Rocks",
+            "image": "/img/events/one-man-rocks.jpg",
+            "date": "2025-07-13",
+            "time": "20:30-22:00"
+        },
+        {
+            "name": "One Man Rocks",
+            "image": "/img/events/one-man-rocks.jpg",
+            "date": "2025-07-20",
+            "time": "20:30-22:00"
+        },
+        {
+            "name": "Blues i Altres Herbes",
+            "image": "/img/events/blues.jpg",
+            "date": "2025-07-27",
+            "time": "19:30-21:30"
+        },
+        {
+            "name": "One Man Rocks",
+            "image": "/img/events/one-man-rocks.jpg",
+            "date": "2025-08-03",
+            "time": "20:30-22:00"
+        },
+        {
+            "name": "Drop Step Jazz",
+            "image": "/img/events/drop-step-jazz.jpg",
+            "date": "2025-08-10",
+            "time": "19:30-21:30"
+        },
+        {
+            "name": "One Man Rocks",
+            "image": "/img/events/one-man-rocks.jpg",
+            "date": "2025-08-17",
+            "time": "20:30-22:00"
+        },
+        {
+            "name": "Blues i Altres Herbes",
+            "image": "/img/events/blues.jpg",
+            "date": "2025-08-31",
+            "time": "19:30-21:30"
+        },
+        {
+            "name": "One Man Rocks",
+            "image": "/img/events/one-man-rocks.jpg",
+            "date": "2025-09-07",
+            "time": "20:30-22:00"
+        },
+        {
+            "name": "One Man Rocks",
+            "image": "/img/events/one-man-rocks.jpg",
+            "date": "2025-09-21",
+            "time": "20:30-22:00"
+        }
+    ]
+}

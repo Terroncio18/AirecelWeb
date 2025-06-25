@@ -16,7 +16,7 @@ import '../styles/layout.css'
 		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat+Alternates:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100..900&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 	</head>
-	<body>
+	<body class={Astro.url.pathname === '/events' ? 'events-page' : ''}>
 		<Header></Header>
 		<FullMenu></FullMenu>
 		<slot />

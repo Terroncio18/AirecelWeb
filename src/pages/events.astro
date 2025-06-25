@@ -6,8 +6,8 @@ import "../styles/events.css";
 <Layout>
     <main>
         <section class="events-header">
-            <h1>Próximos Eventos</h1>
-            <p>Disfruta de música en vivo cada semana</p>
+            <h1 id="events-title"></h1>
+            <p id="events-subtitle"></p>
         </section>
 
         <section>
@@ -17,11 +17,20 @@ import "../styles/events.css";
         </section>
     </main>
 
-    <script type="module">
+   <script type="module">
 	document.addEventListener("DOMContentLoaded", () => {
-		import("../src/scripts/textManager.js").then(({ renderEvents }) => {
+		import("../src/scripts/textManager.js").then(({ renderEvents, renderEventTitles }) => {
 			renderEvents();
+			renderEventTitles();
+		});
+	});
+
+	document.addEventListener("languageChanged", () => {
+		import("../src/scripts/textManager.js").then(({ renderEvents, renderEventTitles }) => {
+			renderEvents();
+			renderEventTitles();
 		});
 	});
 </script>
+
 </Layout>

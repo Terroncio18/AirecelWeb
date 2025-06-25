@@ -16,5 +16,9 @@
     "blog": "Blog",
     "events": "Événements",
     "contact": "Contact"
+  },
+  "eventsPage": {
+    "title": "Événements à venir",
+    "subtitle": "Profitez de la musique en direct chaque semaine"
   }
 }

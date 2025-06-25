@@ -16,5 +16,9 @@
     "blog": "Blog",
     "events": "Events",
     "contact": "Contact"
+  },
+  "eventsPage": {
+    "title": "Next Events",
+    "subtitle": "Enjoy live music every week"
   }
 }

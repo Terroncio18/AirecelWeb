@@ -125,3 +125,15 @@ export async function renderEvents(containerId = "events-list") {
 		container.innerHTML = "No se pudieron cargar los eventos.";
 	}
 }
+
+export function renderEventTitles() {
+	const titleEl = document.getElementById("events-title");
+	const subtitleEl = document.getElementById("events-subtitle");
+
+	if (!window.currentLang?.eventsPage) return;
+
+	const { title, subtitle } = window.currentLang.eventsPage;
+	if (titleEl) titleEl.textContent = title;
+	if (subtitleEl) subtitleEl.textContent = subtitle;
+}
+

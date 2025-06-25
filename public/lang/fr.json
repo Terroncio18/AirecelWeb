@@ -17,8 +17,7 @@
     "events": "Événements",
     "contact": "Contact"
   },
-  "eventsPage": {
-    "title": "Événements à venir",
-    "subtitle": "Profitez de la musique en direct chaque semaine"
+  "footer": {
+    "copyright": "© {year} Restaurant Airecel. Tous droits réservés."
   }
 }

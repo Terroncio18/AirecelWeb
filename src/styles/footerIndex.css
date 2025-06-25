@@ -1,0 +1,21 @@
+/* src/styles/footer.css */
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: transparent;
+	color: white;
+	text-align: center;
+	padding: 1rem 0;
+	font-size: 0.9rem;
+	z-index: 2;
+	/* evita que el footer colisione con otros elementos */
+	pointer-events: none;
+}
+
+.footer p {
+	margin: 0;
+	pointer-events: auto; /* permite seleccionar o copiar texto si hace falta */
+}

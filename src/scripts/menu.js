@@ -18,38 +18,40 @@ export function initMenu() {
 	}
 
 	function toggleMenu() {
-		updateMenuOrigin();
-		const isOpen = fullScreenMenu.classList.contains('open');
-		const header = document.getElementById('main-header');
-		const path = window.location.pathname;
+	updateMenuOrigin();
+	const isOpen = fullScreenMenu.classList.contains('open');
+	const header = document.getElementById('main-header');
+	const path = window.location.pathname;
 
-		if (!header) return;
+	if (!header) return;
 
-		// Eliminar clases existentes
-		header.classList.remove("events-page", "facilities-page");
+	header.classList.remove("events-page", "facilities-page");
 
-		if (isOpen) {
-			fullScreenMenu.classList.add('closing');
-			fullScreenMenu.classList.remove('open');
-			toggleMenuBtn.classList.remove('open');
-			toggleMenuBtn.classList.add('close');
+	if (isOpen) {
+		// Estamos cerrando el menú
+		fullScreenMenu.classList.add('closing');
+		fullScreenMenu.classList.remove('open');
 
-			// Restaurar clase de fondo oscuro según la página actual
-			if (path === "/events") {
-				header.classList.add("events-page");
-			} else if (path === "/facilities") {
-				header.classList.add("facilities-page");
-			}
-		} else {
-			fullScreenMenu.classList.add('open');
-			fullScreenMenu.classList.remove('closing');
-			toggleMenuBtn.classList.add('open');
-			toggleMenuBtn.classList.remove('close');
+		//Botón debe volver a hamburguesa
+		toggleMenuBtn.classList.remove('close');
+		toggleMenuBtn.classList.add('open');
 
-			// Hacer transparente el fondo eliminando clases
-			// (ya lo hicimos arriba)
+		if (path === "/events") {
+			header.classList.add("events-page");
+		} else if (path === "/facilities") {
+			header.classList.add("facilities-page");
 		}
+	} else {
+		// Estamos abriendo el menú
+		fullScreenMenu.classList.add('open');
+		fullScreenMenu.classList.remove('closing');
+
+		// Botón debe convertirse en cruz
+		toggleMenuBtn.classList.remove('open');
+		toggleMenuBtn.classList.add('close');
 	}
+}
+
 
 
 

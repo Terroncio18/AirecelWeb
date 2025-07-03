@@ -52,40 +52,73 @@ header {
     height: 100%;
 }
 
+.logo-addres {
+    display: inline-block;
+    /* o block si lo prefieres */
+    line-height: 0;
+    /* elimina espacio vertical heredado */
+    text-decoration: none;
+    /* evita subrayados invisibles */
+}
+
+.logo-container {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    line-height: 0;
+    /* muy importante para evitar espacios */
+}
+
+.logo-container img {
+    display: block;
+    /* quita el espacio inferior */
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+}
+
 /* Animación para botón hamburguesa => cruz */
 
+.toggle-menu {
+    display: block;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+}
+
 .toggle-menu svg {
-  transition: transform 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .toggle-menu .line {
-  transition: transform 0.4s ease, opacity 0.3s ease;
-  transform-origin: center;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+    transform-origin: center;
 }
 
 .toggle-menu.open .line1 {
-  transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
 }
 
 .toggle-menu.open .line2 {
-  opacity: 1;
+    opacity: 1;
 }
 
 .toggle-menu.open .line3 {
-  transform: rotate(0deg) translate(0, 0);
+    transform: rotate(0deg) translate(0, 0);
 }
 
 /* ANIMACIÓN A CRUZ */
 .toggle-menu.close .line1 {
-  transform: rotate(45deg) translateY(8px);
+    transform: rotate(45deg) translateY(8px);
 }
 
 .toggle-menu.close .line2 {
-  opacity: 0;
+    opacity: 0;
 }
 
 .toggle-menu.close .line3 {
-  transform: rotate(-45deg) translateY(-8px);
+    transform: rotate(-45deg) translateY(-8px);
 }
 
 
@@ -108,13 +141,5 @@ header {
 
     .header-icons {
         display: none;
-    }
-
-    .toggle-menu {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        z-index: 1100;
     }
 }

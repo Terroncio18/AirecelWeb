@@ -1,7 +1,7 @@
-import { initMenu } from "./menu.js";
-import { initLanguage } from "./language.js";
-import { initFullMenu } from "./fullMenu.js";
-import { initFooter } from "./footer.js";
+import { initMenu } from "/src/scripts/menu.js";
+import { initLanguage } from "/src/scripts/language.js";
+import { initFullMenu } from "/src/scripts/fullMenu.js";
+import { initFooter } from "/src/scripts/footer.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 	initMenu();

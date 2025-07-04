@@ -1,6 +1,6 @@
 // src/scripts/fullMenu.js
 
-import { updateMainMenu } from "./textManager.js";
+import { updateMainMenu } from "/src/scripts/textManager.js";
 
 let currentContentKey = "header";
 let currentContainerId = "nav-container-sm";

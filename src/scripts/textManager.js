@@ -15,7 +15,7 @@ export function updateMainMenu(content, containerId = "nav-container-sm", showBa
         const label = typeof value === "string" ? value : value?.title || key;
 
         const link = document.createElement("a");
-        link.className = "nav-address-sm comfortaa-regular nav-address";
+        link.className = "comfortaa-regular nav-address";
         link.textContent = label;
 
         const lang = localStorage.getItem("preferredLanguage") || "es";

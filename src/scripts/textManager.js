@@ -130,7 +130,56 @@ export function updateFooterText() {
     footerEl.textContent = template.replace("{year}", year);
 }
 
+////////////////////////////////////////////////////
+//             Funciones Menu.astro               //
+////////////////////////////////////////////////////
 
 
+export async function renderMenus(containerId = "menus-list") {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = "Cargando menús...";
+
+  try {
+    const lang = localStorage.getItem("preferredLanguage") || "es";
+    const res = await fetch("/lang/menus.json");
+    const data = await res.json();
+
+    const { locales, images } = data;
+    const localizedMenus = locales[lang] || locales["es"];
+
+    container.innerHTML = "";
+
+    Object.entries(localizedMenus).forEach(([key, menu]) => {
+      const card = document.createElement("div");
+      card.className = "menu-card";
+
+      const img = document.createElement("img");
+      img.src = images[key]?.[0] || "/images/placeholder.jpg";
+      img.alt = menu.title;
+
+      const info = document.createElement("div");
+      info.className = "menu-info";
+
+      const title = document.createElement("h3");
+      title.textContent = menu.title;
+
+      const description = document.createElement("p");
+      description.textContent = menu.description;
+
+      info.appendChild(title);
+      info.appendChild(description);
+
+      card.appendChild(img);
+      card.appendChild(info);
+
+      container.appendChild(card);
+    });
+  } catch (err) {
+    console.error("Error al cargar menús:", err);
+    container.innerHTML = "No se pudieron cargar los menús.";
+  }
+}
 
 

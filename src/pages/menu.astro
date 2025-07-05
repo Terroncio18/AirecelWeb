@@ -1,40 +1,39 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Footer from "../components/footer.astro";
-import "../styles/events.css";
+import "../styles/menus.css";
 import "../styles/footer.css";
 ---
 
 <Layout>
     <main>
-        <section class="events-header">
-            <h1 id="events-title"></h1>
-            <p id="events-subtitle"></p>
+        <section class="menus-header">
+            <h1 id="menus-title"></h1>
+            <p id="menus-subtitle"></p>
         </section>
 
         <section>
-            <div id="events-list" class="events-carousel">
+            <div id="menus-list" class="menus-grid">
                 <!-- Aquí se inyectarán las tarjetas desde textManager.js -->
             </div>
         </section>
     </main>
 
-    <Footer></Footer>
+    <Footer />
 
-   <script type="module">
-	document.addEventListener("DOMContentLoaded", () => {
-		import("../src/scripts/textManager.js").then(({ renderEvents, renderEventTitles }) => {
-			renderEvents();
-			renderEventTitles();
-		});
-	});
+    <script type="module">
+        document.addEventListener("DOMContentLoaded", () => {
+            import("../src/scripts/textManager.js").then(({ renderMenus, renderMenusTitles }) => {
+                renderMenus();
+                renderMenusTitles();
+            });
+        });
 
-	document.addEventListener("languageChanged", () => {
-		import("../src/scripts/textManager.js").then(({ renderEvents, renderEventTitles }) => {
-			renderEvents();
-			renderEventTitles();
-		});
-	});
-</script>
-
+        document.addEventListener("languageChanged", () => {
+            import("../src/scripts/textManager.js").then(({ renderMenus, renderMenusTitles }) => {
+                renderMenus();
+                renderMenusTitles();
+            });
+        });
+    </script>
 </Layout>

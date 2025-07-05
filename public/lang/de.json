@@ -1,16 +1,6 @@
 {
   "header": {
-    "menu": {
-      "title": "Menü",
-      "submenu": {
-        "carta": "À la Carte",
-        "special": "Spezialmenü",
-        "snack": "Snackmenü",
-        "group": "Gruppenmenüs",
-        "wines": "Unsere Weine",
-        "drinks": "Getränke"
-      }
-    },
+    "menu":"Menü",
     "booking": "Reservieren",
     "facilities": "Das Restaurant",
     "blog": "Blog",

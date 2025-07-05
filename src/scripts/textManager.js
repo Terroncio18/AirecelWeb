@@ -16,52 +16,11 @@ export function updateMainMenu(content, containerId = "nav-container-sm", showBa
 
         const link = document.createElement("a");
         link.className = "comfortaa-regular nav-address";
-        link.textContent = label;
-
-        const lang = localStorage.getItem("preferredLanguage") || "es";
-        const submenuPDFs = {
-            carta: `/pdfs/carta-${lang}.pdf`,
-            special: "/pdfs/menu-especial.pdf",
-            snack: "/pdfs/menu-snack.pdf",
-            group: "/pdfs/menus-grupos.pdf",
-            wines: "/pdfs/vinos.pdf",
-            drinks: "/pdfs/bebidas.pdf"
-        };
-
-        if (key !== "menu") {
-            if (submenuPDFs[key]) {
-                link.href = submenuPDFs[key];
-                link.target = "_blank"; // Abrir en nueva pestaña
-                link.rel = "noopener noreferrer";
-            } else if(key=="booking"){
-                link.href= "https://reservation.dish.co/widget/hydra-0011i000002k8B8AAI";
-                link.target = "_blank"; // Abrir en nueva pestaña
-                link.rel = "noopener noreferrer";
-            }else{
-                link.href = `/${key}`;
-            }
-        }
+        link.textContent = label;       
+        link.href = `/${key}`;
 
         newDiv.appendChild(link);
     });
-
-    // Botón volver (si aplica)
-    if (showBack) {
-        const backLink = document.createElement("a");
-        backLink.textContent = "←";
-        backLink.className = "back-button";
-        backLink.href = "#";
-
-        const handleBack = (e) => {
-            e.preventDefault();
-            document.dispatchEvent(new CustomEvent("backToMainMenu"));
-        };
-
-        backLink.addEventListener("click", handleBack);
-        backLink.addEventListener("touchstart", handleBack, { passive: true });
-
-        newDiv.appendChild(backLink);
-    }
 
     navContainer.innerHTML = '';
     navContainer.appendChild(newDiv);

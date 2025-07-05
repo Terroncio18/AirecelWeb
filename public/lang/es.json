@@ -1,16 +1,6 @@
 {
   "header": {
-    "menu": {
-      "title": "Menu",
-      "submenu": {
-        "carta": "A la Carta",
-        "special": "Menu Especial",
-        "snack": "Menu Snack",
-        "group": "Menus Grupos",
-        "wines": "Nuestros Vinos",
-        "drinks": "Bebidas"
-      }
-    },
+    "menu":"Menu",
     "booking": "Reservar",
     "facilities": "El Restaurante",
     "blog": "Blog",

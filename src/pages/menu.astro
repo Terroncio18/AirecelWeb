@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import "../styles/events.css";
+import "../styles/footer.css";
+---
+
+<Layout>
+    <main>
+        <section class="events-header">
+            <h1 id="events-title"></h1>
+            <p id="events-subtitle"></p>
+        </section>
+
+        <section>
+            <div id="events-list" class="events-carousel">
+                <!-- Aquí se inyectarán las tarjetas desde textManager.js -->
+            </div>
+        </section>
+    </main>
+
+    <Footer></Footer>
+
+   <script type="module">
+	document.addEventListener("DOMContentLoaded", () => {
+		import("../src/scripts/textManager.js").then(({ renderEvents, renderEventTitles }) => {
+			renderEvents();
+			renderEventTitles();
+		});
+	});
+
+	document.addEventListener("languageChanged", () => {
+		import("../src/scripts/textManager.js").then(({ renderEvents, renderEventTitles }) => {
+			renderEvents();
+			renderEventTitles();
+		});
+	});
+</script>
+
+</Layout>

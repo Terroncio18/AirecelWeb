@@ -9,12 +9,186 @@ import "../styles/footer.css";
     <main>
         <section class="menus-header">
             <h1 id="menus-title"></h1>
-            <p id="menus-subtitle"></p>
         </section>
 
-        <section>
+        <section class="menus-section">
             <div id="menus-list" class="menus-grid">
-                <!-- Aquí se inyectarán las tarjetas desde textManager.js -->
+                <a id="carta-address" target="_blank" href="">
+                    <div class="pictures-container">
+                        <div
+                            class="bg-image active"
+                            style="background-image: url(/img/menus/carta/img1.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/carta/img2.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/carta/img3.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/carta/img4.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/carta/img5.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/carta/img6.jpg);"
+                        >
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <span id="carta-title" class="span-title"></span>
+                        <span id="carta-description" class="span-description"
+                        ></span>
+                    </div>
+                </a>
+                <a
+                    id="special-address"
+                    target="_blank"
+                    href="/public/pdfs/menu-especial.pdf"
+                >
+                    <div class="pictures-container">
+                        <div
+                            class="bg-image active"
+                            style="background-image: url(/img/menus/special/img1.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/special/img2.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/special/img3.jpg);"
+                        >
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <span id="special-title" class="span-title"></span>
+                        <span id="special-description" class="span-description"
+                        ></span>
+                    </div>
+                </a>
+                <a
+                    id="snack-address"
+                    target="_blank"
+                    href="/public/pdfs/menu-snack.pdf"
+                >
+                    <div class="pictures-container">
+                        <div
+                            class="bg-image active"
+                            style="background-image: url(/img/menus/snack/img1.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/snack/img2.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/snack/img3.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/snack/img4.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/snack/img5.jpg);"
+                        >
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <span id="snack-title" class="span-title"></span>
+                        <span id="snack-description" class="span-description"
+                        ></span>
+                    </div>
+                </a>
+                <a
+                    id="groups-address"
+                    target="_blank"
+                    href="/public/pdfs/menus-grupos.pdf"
+                >
+                    <div class="pictures-container">
+                        <div
+                            class="bg-image active"
+                            style="background-image: url(/img/menus/groups/img1.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/groups/img2.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/groups/img3.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/groups/img4.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/groups/img5.jpg);"
+                        >
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <span id="groups-title" class="span-title"></span>
+                        <span id="groups-description" class="span-description"
+                        ></span>
+                    </div>
+                </a>
+                <a
+                    id="wines-address"
+                    target="_blank"
+                    href="/public/pdfs/vinos.pdf"
+                >
+                    <div class="pictures-container">
+                        <div
+                            class="bg-image active"
+                            style="background-image: url(/img/menus/wine/img1.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/wine/img2.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/wine/img3.jpg);"
+                        >
+                        </div>
+                        <div
+                            class="bg-image"
+                            style="background-image: url(/img/menus/wine/img4.jpg);"
+                        >
+                        </div>
+                    </div>
+                    <div class="text-container">
+                        <span id="wines-title" class="span-title"></span>
+                        <span id="wines-description" class="span-description"
+                        ></span>
+                    </div>
+                </a>
             </div>
         </section>
     </main>
@@ -23,17 +197,22 @@ import "../styles/footer.css";
 
     <script type="module">
         document.addEventListener("DOMContentLoaded", () => {
-            import("../src/scripts/textManager.js").then(({ renderMenus, renderMenusTitles }) => {
-                renderMenus();
-                renderMenusTitles();
-            });
+            import("../src/scripts/textManager.js").then(
+                ({ renderMenusTitles }) => {
+                    renderMenusTitles();
+                },
+            );
         });
 
         document.addEventListener("languageChanged", () => {
-            import("../src/scripts/textManager.js").then(({ renderMenus, renderMenusTitles }) => {
-                renderMenus();
-                renderMenusTitles();
-            });
+            import("../src/scripts/textManager.js").then(
+                ({ renderMenusTitles }) => {
+                    renderMenusTitles();
+                },
+            );
         });
+    </script>
+    <script>
+        import "../scripts/images";
     </script>
 </Layout>

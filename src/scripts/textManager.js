@@ -33,12 +33,19 @@ export function updateMainMenu(content, containerId = "nav-container-sm", showBa
 
 
 function isWithinNext30Days(dateStr) {
-    const today = new Date();
-    const target = new Date(dateStr);
-    const diff = target - today;
-    const diffInDays = diff / (1000 * 60 * 60 * 24);
-    return diffInDays >= 0 && diffInDays <= 30;
+  const today = new Date();
+  const target = new Date(dateStr);
+
+  // Truncar horas
+  today.setHours(0, 0, 0, 0);
+  target.setHours(0, 0, 0, 0);
+
+  const diff = target - today;
+  const diffInDays = diff / (1000 * 60 * 60 * 24);
+
+  return diffInDays >= 0 && diffInDays <= 30;
 }
+
 
 export async function renderEvents(containerId = "events-list") {
     const container = document.getElementById(containerId);
@@ -135,51 +142,74 @@ export function updateFooterText() {
 ////////////////////////////////////////////////////
 
 
-export async function renderMenus(containerId = "menus-list") {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-
-  container.innerHTML = "Cargando menús...";
-
+export async function renderMenusTitles() {
   try {
     const lang = localStorage.getItem("preferredLanguage") || "es";
     const res = await fetch("/lang/menus.json");
     const data = await res.json();
 
-    const { locales, images } = data;
-    const localizedMenus = locales[lang] || locales["es"];
+    const localized = data.locales[lang] || data.locales["es"];
 
-    container.innerHTML = "";
+    // Actualiza el título principal
+    const mainTitle = document.getElementById("menus-title");
+    if (mainTitle) mainTitle.textContent = localized.title;
 
-    Object.entries(localizedMenus).forEach(([key, menu]) => {
-      const card = document.createElement("div");
-      card.className = "menu-card";
+    // Listado de secciones
+    const sections = ["carta", "special", "snack", "groups", "wines"];
 
-      const img = document.createElement("img");
-      img.src = images[key]?.[0] || "/images/placeholder.jpg";
-      img.alt = menu.title;
+    sections.forEach((section) => {
+      const titleSpan = document.getElementById(`${section}-title`);
+      const descSpan = document.getElementById(`${section}-description`);
+      const anchor = document.getElementById(`${section}-address`);
 
-      const info = document.createElement("div");
-      info.className = "menu-info";
+      // Título y descripción
+      if (titleSpan) titleSpan.textContent = localized[section]?.title || "";
+      if (descSpan) descSpan.textContent = localized[section]?.description || "";
 
-      const title = document.createElement("h3");
-      title.textContent = menu.title;
-
-      const description = document.createElement("p");
-      description.textContent = menu.description;
-
-      info.appendChild(title);
-      info.appendChild(description);
-
-      card.appendChild(img);
-      card.appendChild(info);
-
-      container.appendChild(card);
+      // Solo la carta tiene href variable según idioma
+      if (section === "carta" && anchor) {
+        anchor.href = `/public/pdfs/carta-${lang}.pdf`;
+      }
     });
-  } catch (err) {
-    console.error("Error al cargar menús:", err);
-    container.innerHTML = "No se pudieron cargar los menús.";
+
+  } catch (error) {
+    console.error("Error al actualizar títulos de los menús:", error);
   }
 }
+
+////////////////////////////////////////////////////
+//           Funciones Facilities.astro           //
+////////////////////////////////////////////////////
+
+
+export async function renderFacilitiesContent() {
+  try {
+    const lang = localStorage.getItem("preferredLanguage") || "es";
+    const res = await fetch("/lang/facilities.json");
+    const data = await res.json();
+
+    const localized = data[lang] || data["es"];
+
+    const sections = [
+      { key: "aforo", data: localized.aforo },
+      { key: "comfort", data: localized.comfort },
+      { key: "access", data: localized.access },
+      { key: "views", data: localized.views },
+      { key: "services", data: localized.services }
+    ];
+
+    sections.forEach(({ key, data }) => {
+      const titleEl = document.getElementById(`tittle-${key}`);
+      const descEl = document.getElementById(`description-${key}`);
+
+      if (titleEl) titleEl.textContent = data.title;
+      if (descEl) descEl.innerHTML = data.content;
+    });
+  } catch (error) {
+    console.error("Error al cargar textos de facilities:", error);
+  }
+}
+
+
 
 

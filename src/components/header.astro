@@ -4,11 +4,7 @@ import "../styles/header.css";
 import SocialIcons from "./socialIcons.astro";
 
 const pathname = Astro.url.pathname;
-const headerClass = pathname === '/events'
-  ? 'events-page'
-  : pathname === '/facilities'
-    ? 'facilities-page'
-    : '';
+const headerClass = pathname === '/' ? 'transparent-header' : 'dark-header';
 ---
 
 <header id="main-header" class={headerClass}>
@@ -69,3 +65,8 @@ const headerClass = pathname === '/events'
         
     </div>
 </header>
+
+<script>
+	import "../scripts/header";
+	
+</script>

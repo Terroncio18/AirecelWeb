@@ -48,7 +48,7 @@
     height: 100%;
     background-size: cover;
     background-position: center;
-    background-image: url('/img/img1.jpg');
+    background-image: url('/img/index/img1.jpg');
     filter: brightness(0.2);
 }
 

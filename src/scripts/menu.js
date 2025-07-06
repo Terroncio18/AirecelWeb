@@ -25,30 +25,32 @@ export function initMenu() {
 
 	if (!header) return;
 
-	header.classList.remove("events-page", "facilities-page");
+	// Limpiar clases actuales
+	header.classList.remove("dark-header", "transparent-header");
 
 	if (isOpen) {
-		// Estamos cerrando el menú
 		fullScreenMenu.classList.add('closing');
 		fullScreenMenu.classList.remove('open');
 
-		//Botón debe volver a hamburguesa
 		toggleMenuBtn.classList.remove('close');
 		toggleMenuBtn.classList.add('open');
 
-		if (path === "/events") {
-			header.classList.add("events-page");
-		} else if (path === "/facilities") {
-			header.classList.add("facilities-page");
+		// Si estamos en home, el fondo sigue siendo transparente
+		// Si estamos en otra ruta, volvemos a fondo oscuro
+		if (path === "/") {
+			header.classList.add("transparent-header");
+		} else {
+			header.classList.add("dark-header");
 		}
 	} else {
-		// Estamos abriendo el menú
+	
 		fullScreenMenu.classList.add('open');
 		fullScreenMenu.classList.remove('closing');
 
-		// Botón debe convertirse en cruz
 		toggleMenuBtn.classList.remove('open');
 		toggleMenuBtn.classList.add('close');
+
+		header.classList.add("transparent-header");
 	}
 }
 

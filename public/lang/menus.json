@@ -1,6 +1,7 @@
 {
   "locales": {
     "es": {
+      "title":"Nuestros Menús",
       "carta": {
         "title": "Carta",
         "description": "Explora nuestra selección completa de platos."
@@ -23,6 +24,7 @@
       }
     },
     "fr": {
+      "title":"Nos Menus",
       "carta": {
         "title": "Carte",
         "description": "Découvrez notre sélection complète de plats."
@@ -45,6 +47,7 @@
       }
     },
     "en": {
+      "title":"Our Menus",
       "carta": {
         "title": "Menu",
         "description": "Explore our full selection of dishes."
@@ -67,6 +70,7 @@
       }
     },
     "de": {
+      "title":"Unsere Menüs",
       "carta": {
         "title": "Speisekarte",
         "description": "Entdecken Sie unsere vollständige Auswahl an Gerichten."
@@ -88,27 +92,5 @@
         "description": "Eine feine Auswahl an lokalen und internationalen Weinen."
       }
     }
-  },
-  "images": {
-    "carta": [
-      "/images/menus/carta1.jpg",
-      "/images/menus/carta2.jpg"
-    ],
-    "special": [
-      "/images/menus/special1.jpg",
-      "/images/menus/special2.jpg"
-    ],
-    "snack": [
-      "/images/menus/snack1.jpg",
-      "/images/menus/snack2.jpg"
-    ],
-    "groups": [
-      "/images/menus/groups1.jpg",
-      "/images/menus/groups2.jpg"
-    ],
-    "wines": [
-      "/images/menus/wines1.jpg",
-      "/images/menus/wines2.jpg"
-    ]
   }
 }

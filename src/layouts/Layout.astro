@@ -3,29 +3,24 @@ import Header from "../components/header.astro";
 import FullMenu from "../components/FullMenu.astro";
 import "../styles/fonts.css";
 import "../styles/layout.css";
+const { title = "Restaurant Airecel", lang = "es" } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/png" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Restaurant Airecel</title>
+		<title>{title}</title>
 		<!-- Google Fonts -->
 		<link
 			href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Montserrat+Alternates:ital,wght@0,100..900;1,100..900&family=Roboto:wght@100..900&family=Dancing+Script:wght@400;500;600;700&display=swap"
 			rel="stylesheet"
 		/>
 	</head>
-	<body
-		class={Astro.url.pathname === "/events"
-			? "events-page"
-			: Astro.url.pathname === "/facilities"
-				? "facilities-page"
-				: ""}
-	>
+	<body>
 		<Header />
 		<FullMenu />
 		<slot />

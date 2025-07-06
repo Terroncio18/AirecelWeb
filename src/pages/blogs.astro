@@ -1,0 +1,31 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import "../styles/blogs.css"
+import "../styles/footer.css";
+---
+
+<Layout>
+    <main>
+    <h1 id="blogs-title"></h1>
+    <h2 id="blogs-subtitle"></h2>
+    <div id="blogs-list" class="blogs-grid"></div>
+    </main>
+    <Footer />
+    <script type="module">
+        import {
+            renderBlogEntries,
+            renderBlogTitles,
+        } from "../src/scripts/textManager.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderBlogEntries();
+            renderBlogTitles();
+        });
+
+        document.addEventListener("languageChanged", () => {
+            renderBlogEntries();
+            renderBlogTitles();
+        });
+    </script>
+</Layout>

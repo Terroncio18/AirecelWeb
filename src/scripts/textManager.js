@@ -28,7 +28,7 @@ export function updateMainMenu(content, containerId = "nav-container-sm", showBa
 
 
 ////////////////////////////////////////////////////
-//             Funciones events.astro           //
+//             Funciones events.astro             //
 ////////////////////////////////////////////////////
 
 
@@ -212,4 +212,103 @@ export async function renderFacilitiesContent() {
 
 
 
+////////////////////////////////////////////////////
+//            Funciones conctact.astro            //
+////////////////////////////////////////////////////
 
+export async function renderContactContent() {
+  try {
+    const lang = localStorage.getItem("preferredLanguage") || "es";
+    const res = await fetch("/lang/contact.json");
+    const data = await res.json();
+    const localized = data[lang] || data["es"];
+
+    // Textos estáticos
+    document.getElementById("contact-title").textContent = localized.title;
+    document.getElementById("contact-intro").textContent = localized.intro;
+    document.getElementById("contact-address").textContent = localized.address;
+    document.getElementById("contact-hours").textContent = localized.hours;
+
+    // Formulario
+    document.querySelector('label[for="form-name"]').textContent = localized.form.name;
+    document.querySelector('label[for="form-email"]').textContent = localized.form.email;
+    document.querySelector('label[for="form-message"]').textContent = localized.form.message;
+
+    document.getElementById("form-name").placeholder = localized.form.placeholderName;
+    document.getElementById("form-email").placeholder = localized.form.placeholderEmail;
+    document.getElementById("form-message").placeholder = localized.form.placeholderMessage;
+    document.getElementById("form-submit").textContent = localized.form.submit;
+
+  } catch (error) {
+    console.error("Error al cargar textos de contacto:", error);
+  }
+}
+
+////////////////////////////////////////////////////
+//             Funciones blogs.astro              //
+////////////////////////////////////////////////////
+
+export async function renderBlogEntries(containerId = "blogs-list") {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = "Cargando entradas...";
+
+  try {
+    const lang = localStorage.getItem("preferredLanguage") || "es";
+    const res = await fetch("/lang/blogs.json");
+    const data = await res.json();
+
+    const localized = data[lang] || data["es"];
+    const entries = localized.entries;
+
+    container.innerHTML = "";
+
+    Object.entries(entries).forEach(([key, blog]) => {
+      const card = document.createElement("a");
+      card.className = "blog-card";
+      card.href = `/blogs/${key}`;
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
+
+      const img = document.createElement("img");
+      img.src = blog.image;
+      img.alt = blog.title;
+
+      const info = document.createElement("div");
+      info.className = "blog-info";
+
+      const title = document.createElement("h3");
+      title.textContent = blog.title;
+
+      const description = document.createElement("p");
+      description.textContent = blog.description;
+
+      const date = document.createElement("span");
+      date.className = "blog-date";
+      date.textContent = blog.date;
+
+      info.appendChild(title);
+      info.appendChild(description);
+      info.appendChild(date);
+      card.appendChild(img);
+      card.appendChild(info);
+
+      container.appendChild(card);
+    });
+
+  } catch (error) {
+    console.error("Error al cargar blogs:", error);
+    container.innerHTML = "No se pudieron cargar las entradas.";
+  }
+}
+
+export function renderBlogTitles() {
+  const titleEl = document.getElementById("blogs-title");
+  const subtitleEl = document.getElementById("blogs-subtitle");
+
+  if (!window.currentLang?.blogs) return;
+
+  titleEl.textContent = window.currentLang.blogs.title || "";
+  subtitleEl.textContent = window.currentLang.blogs.subtitle || "";
+}

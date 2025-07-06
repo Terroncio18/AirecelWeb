@@ -1,0 +1,198 @@
+{
+  "es": {
+    "title": "Blog del Restaurante Airecel",
+    "subtitle": "Descubre las delicias mediterráneas",
+    "intro": "Bienvenido a nuestro paraíso culinario, donde el sol mediterráneo se une a las delicias gastronómicas. Sumérgete con nosotros en el arte de la cocina mediterránea mientras compartimos secretos locales, recetas y más.",
+    "entries": {
+      "paella": {
+        "title": "El secreto de nuestra paella",
+        "description": "Te revelamos cómo preparamos una paella auténtica que enamora a nuestros comensales.",
+        "image": "/img/blogs/paella.jpg",
+        "date": "2024-05-01"
+      },
+      "lechona": {
+        "title": "Lechona mallorquina al horno",
+        "description": "Una tradición que se sirve caliente. Así cocinamos la lechona en Airecel.",
+        "image": "/img/blogs/lechona.jpg",
+        "date": "2024-05-10"
+      },
+      "mateo": {
+        "title": "Conversando con el chef Mateo",
+        "description": "Nuestro chef comparte su visión, pasiones y secretos culinarios.",
+        "image": "/img/blogs/mateo.jpg",
+        "date": "2024-05-15"
+      },
+      "caldereta": {
+        "title": "Caldereta de mariscos: sabor a mar",
+        "description": "Un clásico balear reinventado con el toque Airecel.",
+        "image": "/img/blogs/caldereta.jpg",
+        "date": "2024-06-01"
+      },
+      "pascua": {
+        "title": "Sabores de Pascua",
+        "description": "Los platos típicos que servimos en Semana Santa y su historia.",
+        "image": "/img/blogs/pascua.jpg",
+        "date": "2024-03-28"
+      },
+      "naranjas": {
+        "title": "El valle de Sóller y sus naranjas",
+        "description": "Explora la importancia de las naranjas en nuestra cocina y cultura.",
+        "image": "/img/blogs/naranjas.jpg",
+        "date": "2024-04-18"
+      },
+      "gambas": {
+        "title": "Gamba roja de Sóller",
+        "description": "Uno de nuestros productos estrella y cómo lo servimos en Airecel.",
+        "image": "/img/blogs/gambas.jpg",
+        "date": "2024-04-30"
+      }
+    }
+  },
+  "en": {
+    "title": "Airecel Restaurant Blog",
+    "subtitle": "Discover Mediterranean Delights",
+    "intro": "Welcome to our culinary paradise, where the Mediterranean sun meets delicious cuisine. Dive into the art of Mediterranean cooking as we share local secrets, recipes, and more.",
+    "entries": {
+      "paella": {
+        "title": "The Secret Behind Our Paella",
+        "description": "We reveal how we prepare an authentic paella that captivates our guests.",
+        "image": "/img/blogs/paella.jpg",
+        "date": "2024-05-01"
+      },
+      "lechona": {
+        "title": "Mallorcan Roast Lechona",
+        "description": "A tradition served hot. This is how we cook lechona at Airecel.",
+        "image": "/img/blogs/lechona.jpg",
+        "date": "2024-05-10"
+      },
+      "mateo": {
+        "title": "A Talk with Chef Mateo",
+        "description": "Our chef shares his vision, passions, and culinary secrets.",
+        "image": "/img/blogs/mateo.jpg",
+        "date": "2024-05-15"
+      },
+      "caldereta": {
+        "title": "Seafood Caldereta: Taste of the Sea",
+        "description": "A Balearic classic reinvented with the Airecel touch.",
+        "image": "/img/blogs/caldereta.jpg",
+        "date": "2024-06-01"
+      },
+      "pascua": {
+        "title": "Easter Flavors",
+        "description": "Typical Easter dishes we serve and their history.",
+        "image": "/img/blogs/pascua.jpg",
+        "date": "2024-03-28"
+      },
+      "naranjas": {
+        "title": "The Sóller Valley and Its Oranges",
+        "description": "Explore the importance of oranges in our cuisine and culture.",
+        "image": "/img/blogs/naranjas.jpg",
+        "date": "2024-04-18"
+      },
+      "gambas": {
+        "title": "Sóller’s Red Prawn",
+        "description": "One of our star products and how we serve it at Airecel.",
+        "image": "/img/blogs/gambas.jpg",
+        "date": "2024-04-30"
+      }
+    }
+  },
+  "fr": {
+    "title": "Blog du Restaurant Airecel",
+    "subtitle": "Découvrez les délices méditerranéens",
+    "intro": "Bienvenue dans notre paradis culinaire, où le soleil méditerranéen rencontre les plaisirs de la table. Plongez avec nous dans l’art de la cuisine méditerranéenne à travers nos secrets locaux, nos recettes et bien plus encore.",
+    "entries": {
+      "paella": {
+        "title": "Le secret de notre paella",
+        "description": "Découvrez comment nous préparons une paella authentique qui séduit nos clients.",
+        "image": "/img/blogs/paella.jpg",
+        "date": "2024-05-01"
+      },
+      "lechona": {
+        "title": "Lechona majorquine au four",
+        "description": "Une tradition servie chaude. Voici comment nous la préparons à Airecel.",
+        "image": "/img/blogs/lechona.jpg",
+        "date": "2024-05-10"
+      },
+      "mateo": {
+        "title": "Entretien avec le chef Mateo",
+        "description": "Notre chef partage sa vision, ses passions et ses secrets culinaires.",
+        "image": "/img/blogs/mateo.jpg",
+        "date": "2024-05-15"
+      },
+      "caldereta": {
+        "title": "Caldereta de fruits de mer : saveur de la mer",
+        "description": "Un classique des Baléares revisité avec la touche Airecel.",
+        "image": "/img/blogs/caldereta.jpg",
+        "date": "2024-06-01"
+      },
+      "pascua": {
+        "title": "Saveurs de Pâques",
+        "description": "Les plats traditionnels que nous servons pendant la Semaine Sainte.",
+        "image": "/img/blogs/pascua.jpg",
+        "date": "2024-03-28"
+      },
+      "naranjas": {
+        "title": "La vallée de Sóller et ses oranges",
+        "description": "Découvrez l’importance des oranges dans notre cuisine et notre culture.",
+        "image": "/img/blogs/naranjas.jpg",
+        "date": "2024-04-18"
+      },
+      "gambas": {
+        "title": "La crevette rouge de Sóller",
+        "description": "L’un de nos produits phares et comment nous le servons à Airecel.",
+        "image": "/img/blogs/gambas.jpg",
+        "date": "2024-04-30"
+      }
+    }
+  },
+  "de": {
+    "title": "Blog des Restaurants Airecel",
+    "subtitle": "Entdecken Sie mediterrane Köstlichkeiten",
+    "intro": "Willkommen in unserem kulinarischen Paradies, wo die Mittelmeersonne auf feine Küche trifft. Tauchen Sie ein in die Kunst der mediterranen Küche mit lokalen Geheimnissen, Rezepten und vielem mehr.",
+    "entries": {
+      "paella": {
+        "title": "Das Geheimnis unserer Paella",
+        "description": "Wir verraten, wie wir eine authentische Paella zubereiten, die unsere Gäste begeistert.",
+        "image": "/img/blogs/paella.jpg",
+        "date": "2024-05-01"
+      },
+      "lechona": {
+        "title": "Mallorquinisches Spanferkel aus dem Ofen",
+        "description": "Eine heiße Tradition – so bereiten wir die Lechona bei Airecel zu.",
+        "image": "/img/blogs/lechona.jpg",
+        "date": "2024-05-10"
+      },
+      "mateo": {
+        "title": "Im Gespräch mit Küchenchef Mateo",
+        "description": "Unser Küchenchef teilt seine Vision, Leidenschaft und kulinarischen Geheimnisse.",
+        "image": "/img/blogs/mateo.jpg",
+        "date": "2024-05-15"
+      },
+      "caldereta": {
+        "title": "Meeresfrüchte-Caldereta: Geschmack des Meeres",
+        "description": "Ein balearischer Klassiker mit dem besonderen Airecel-Touch.",
+        "image": "/img/blogs/caldereta.jpg",
+        "date": "2024-06-01"
+      },
+      "pascua": {
+        "title": "Osteraromen",
+        "description": "Traditionelle Gerichte zu Ostern und ihre Geschichte.",
+        "image": "/img/blogs/pascua.jpg",
+        "date": "2024-03-28"
+      },
+      "naranjas": {
+        "title": "Das Sóller-Tal und seine Orangen",
+        "description": "Erfahren Sie mehr über die Bedeutung der Orangen in unserer Küche und Kultur.",
+        "image": "/img/blogs/naranjas.jpg",
+        "date": "2024-04-18"
+      },
+      "gambas": {
+        "title": "Rote Garnele aus Sóller",
+        "description": "Eines unserer Top-Produkte – so servieren wir sie im Airecel.",
+        "image": "/img/blogs/gambas.jpg",
+        "date": "2024-04-30"
+      }
+    }
+  }
+}

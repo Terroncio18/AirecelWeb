@@ -1,0 +1,172 @@
+---
+//src/contact.astro
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/footer.astro";
+import "../styles/contact.css";
+import "../styles/footer.css";
+---
+
+<Layout>
+    <main>
+        <section class="contact-section">
+            <div class="contact-container">
+                <div class="contact-text">
+                    <h1 id="contact-title"></h1>
+                    <p id="contact-intro"></p>
+
+                    <ul class="contact-info">
+                        <li>
+                            <strong>📍</strong>
+                            <span id="contact-address"></span>
+                        </li>
+                        <li>
+                            <strong>📞</strong>
+                            <a href="tel:+34971631200">+34 971 631 200</a>
+                        </li>
+                        <li>
+                            <strong>✉️</strong>
+                            <a href="mailto:info@airecelrestaurant.com"
+                                >info@airecelrestaurant.com</a
+                            >
+                        </li>
+                        <li>
+                            <strong>🕒</strong>
+                            <span id="contact-hours"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <form
+                    class="contact-form"
+                    action="https://formspree.io/f/xzzgqyog"
+                    method="POST"
+                    id="contact-form"
+                >
+                    <label for="form-name">Nombre</label>
+                    <input
+                        type="text"
+                        name="name"
+                        id="form-name"
+                        placeholder="Tu nombre"
+                        required
+                    />
+
+                    <label for="form-email">Email</label>
+                    <input
+                        type="email"
+                        name="_replyto"
+                        id="form-email"
+                        placeholder="tucorreo@email.com"
+                        required
+                    />
+
+                    <label for="form-message">Mensaje</label>
+                    <textarea
+                        name="message"
+                        id="form-message"
+                        rows="5"
+                        placeholder="Escribe tu mensaje aquí"
+                        required></textarea>
+
+                    <button type="submit" id="form-submit">Enviar</button>
+                </form>
+                <div id="form-response" class="form-response"></div>
+            </div>
+
+            <div class="map-container">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3065.4891967628473!2d2.695026176378613!3d39.796017293183574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1297e5e2b26b6d77%3A0xf4b515ec2536b87d!2sAirecel%20Restaurant!5e0!3m2!1ses!2ses!4v1751825915021!5m2!1ses!2ses"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </section>
+    </main>
+
+    <Footer />
+
+    <script type="module">
+        import { renderContactContent } from "../src/scripts/textManager.js";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            renderContactContent();
+        });
+
+        document.addEventListener("languageChanged", () => {
+            renderContactContent();
+        });
+    </script>
+    <script type="module">
+        import { renderContactContent } from "../src/scripts/textManager.js";
+
+        const form = document.getElementById("contact-form");
+        const responseBox = document.getElementById("form-response");
+
+        const i18n = {
+            es: {
+                sending: "Enviando...",
+                success: "Mensaje enviado correctamente.",
+                error: "Hubo un error. Intenta más tarde.",
+                network: "Error de red. Intenta de nuevo.",
+            },
+            en: {
+                sending: "Sending...",
+                success: "Message sent successfully.",
+                error: "An error occurred. Please try again.",
+                network: "Network error. Please try again.",
+            },
+            fr: {
+                sending: "Envoi...",
+                success: "Message envoyé avec succès.",
+                error: "Une erreur est survenue. Réessayez.",
+                network: "Erreur réseau. Veuillez réessayer.",
+            },
+            de: {
+                sending: "Senden...",
+                success: "Nachricht erfolgreich gesendet.",
+                error: "Es ist ein Fehler aufgetreten.",
+                network: "Netzwerkfehler. Bitte erneut versuchen.",
+            },
+        };
+
+        const lang = localStorage.getItem("preferredLanguage") || "es";
+        const msg = i18n[lang] || i18n["es"];
+
+        if (form && responseBox) {
+            form.addEventListener("submit", async (e) => {
+                e.preventDefault();
+                const data = new FormData(form);
+                responseBox.textContent = msg.sending;
+                responseBox.style.color = "#555";
+
+                try {
+                    const res = await fetch(form.action, {
+                        method: "POST",
+                        body: data,
+                        headers: {
+                            Accept: "application/json",
+                        },
+                    });
+
+                    if (res.ok) {
+                        form.reset();
+                        responseBox.textContent = msg.success;
+                        responseBox.style.color = "green";
+                    } else {
+                        responseBox.textContent = msg.error;
+                        responseBox.style.color = "red";
+                    }
+                } catch (err) {
+                    responseBox.textContent = msg.network;
+                    responseBox.style.color = "red";
+                }
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", renderContactContent);
+        document.addEventListener("languageChanged", renderContactContent);
+    </script>
+</Layout>

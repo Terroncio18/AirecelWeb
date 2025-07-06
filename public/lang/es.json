@@ -1,9 +1,9 @@
 {
   "header": {
-    "menu":"Menu",
+    "menus":"Menu",
     "booking": "Reservar",
     "facilities": "El Restaurante",
-    "blog": "Blog",
+    "blogs": "Blog",
     "events": "Eventos",
     "contact": "Contacto"
   },
@@ -13,5 +13,33 @@
   },
   "footer": {
     "copyright": "© {year} Restaurante Airecel. Todos los derechos reservados."
+  },
+  
+  "meta": {
+    "home": {
+      "title": "Restaurante Airecel - Cocina Mediterránea en Mallorca",
+      "description": "Descubre Airecel, restaurante mediterráneo en Port de Sóller. Reserva tu mesa ahora."
+    },
+    "menus": {
+      "title": "Menús - Airecel Restaurante",
+      "description": "Explora nuestra carta mediterránea, menús especiales y opciones para grupos."
+    },
+    "events": {
+  "title": "Eventos - Airecel Restaurante",
+  "description": "Consulta nuestros próximos eventos musicales y actividades especiales en Airecel."
+},
+    "facilities": {
+      "title": "Instalaciones - Airecel Restaurante",
+      "description": "Conoce nuestras instalaciones: terraza, accesibilidad, vistas y sala de conferencias."
+    },
+    "blogs": {
+      "title": "Blog - Airecel Restaurante",
+      "description": "Lee nuestras novedades, recetas y noticias relacionadas con la gastronomía."
+    },
+    "contact": {
+      "title": "Contacto - Airecel Restaurante",
+      "description": "Ubicación, teléfono, correo y horario de Airecel en Mallorca."
+    }
   }
 }
+

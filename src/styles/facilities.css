@@ -2,14 +2,11 @@
 html,
 body {
   height: 100%;
-  overflow: hidden; /* bloquea scroll externo */
 }
 
 main{
-  padding-top:0 ;
+  padding-top: 0;
   scroll-snap-type: y mandatory;
-  overflow-y: scroll;
-  height: 100vh;
   scroll-behavior: smooth;
 }
 section {

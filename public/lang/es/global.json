@@ -40,6 +40,15 @@
       "title": "Contacto - Airecel Restaurante",
       "description": "Ubicación, teléfono, correo y horario de Airecel en Mallorca."
     }
+  },
+
+  "header-seo":{
+    "logo":{
+      "label":"Volver Inicio"
+    },
+    "menu":{
+      "label":"Abrir Menu"
+    }
   }
 }
 

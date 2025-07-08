@@ -1,23 +1,28 @@
 {
-    "title": "Unsere Menüs",
-    "carta": {
-        "title": "Speisekarte",
-        "description": "Entdecken Sie unsere vollständige Auswahl an Gerichten."
-    },
-    "special": {
-        "title": "Aires de Mallorca",
-        "description": "Unser besonderes Degustationsmenü"
-    },
-    "snack": {
-        "title": "Snacks",
-        "description": "Leckere Häppchen für zwischendurch."
-    },
-    "groups": {
-        "title": "Gruppen",
-        "description": "Menü für Gruppen ab 10 Personen"
-    },
-    "wines": {
-        "title": "Weine",
-        "description": "Eine feine Auswahl an lokalen und internationalen Weinen."
-    }
+  "title": "Unsere Menüs",
+  "carta": {
+    "title": "Speisekarte",
+    "description": "Entdecken Sie unsere vollständige Auswahl an Gerichten.",
+    "href": "/pdfs/carta-de.pdf"
+  },
+  "special": {
+    "title": "Aires de Mallorca",
+    "description": "Unser besonderes Degustationsmenü",
+    "href": "/pdfs/menu-especial-de.pdf"
+  },
+  "snack": {
+    "title": "Snacks",
+    "description": "Leckere Häppchen für zwischendurch.",
+    "href": "/pdfs/menu-snack-de.pdf"
+  },
+  "groups": {
+    "title": "Gruppen",
+    "description": "Menü für Gruppen ab 10 Personen",
+    "href": "/pdfs/menus-grupos-de.pdf"
+  },
+  "wines": {
+    "title": "Weine",
+    "description": "Eine feine Auswahl an lokalen und internationalen Weinen.",
+    "href": "/pdfs/vinos-de.pdf"
+  }
 }

@@ -39,5 +39,14 @@
       "title": "Contact - Restaurant Airecel",
       "description": "Trouvez notre adresse, numéro de téléphone, email et horaires à Majorque."
     }
+  },
+  "header-seo": {
+  "logo": {
+    "label": "Retour à l'accueil"
+  },
+  "menu": {
+    "label": "Ouvrir le menu"
   }
+}
+
 }

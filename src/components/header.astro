@@ -4,69 +4,57 @@ import "../styles/header.css";
 import SocialIcons from "./socialIcons.astro";
 
 const pathname = Astro.url.pathname;
-const headerClass = pathname === '/' ? 'transparent-header' : 'dark-header';
+const headerClass = pathname === "/" ? "transparent-header" : "dark-header";
 ---
 
 <header id="main-header" class={headerClass}>
-    <div id="header-navbar">
-        <a class="logo-addres" href="/">
-            <div class="logo-container">
-                <img src="/logo.png" alt="Logo" />
-            </div>
-        </a>
+	<div id="header-navbar">
+		<a id="logo-address" class="logo-addres" href="/">
+			<div class="logo-container">
+				<img src="/logo.png" alt="Logo" />
+			</div>
+		</a>
 
-        <SocialIcons class="social-icons header-icons"></SocialIcons>
+		<SocialIcons class="social-icons header-icons" />
 
-        
-            <button
-                class="toggle-menu open"
-                id="toggleMenuBtn"
-                aria-label="Abrir menú"
-            >
-                <!-- SVG menú hamburguesa -->
-                 <svg
-							xmlns="http://www.w3.org/2000/svg"
-							viewBox="0 0 30 30"
-							width="40"
-							height="40"
-						>
-							<rect
-								x="0"
-								y="0"
-								width="30"
-								height="30"
-								fill="transparent"></rect>
-							<line
-								class="line line1"
-								x1="5"
-								y1="7"
-								x2="25"
-								y2="7"
-								stroke="white"
-								stroke-width="2"></line>
-							<line
-								class="line line2"
-								x1="5"
-								y1="15"
-								x2="25"
-								y2="15"
-								stroke="white"
-								stroke-width="2"></line>
-							<line
-								class="line line3"
-								x1="5"
-								y1="23"
-								x2="25"
-								y2="23"
-								stroke="white"
-								stroke-width="2"></line>
-						</svg>
-            </button>
-        
-    </div>
+		<button class="toggle-menu open" id="toggleMenuBtn">
+			<!-- SVG menú hamburguesa -->
+			<svg
+				xmlns="http://www.w3.org/2000/svg"
+				viewBox="0 0 30 30"
+				width="40"
+				height="40"
+			>
+				<title>Toogle Menu</title>
+				<rect x="0" y="0" width="30" height="30" fill="transparent"
+				></rect>
+				<line
+					class="line line1"
+					x1="5"
+					y1="7"
+					x2="25"
+					y2="7"
+					stroke="white"
+					stroke-width="2"></line>
+				<line
+					class="line line2"
+					x1="5"
+					y1="15"
+					x2="25"
+					y2="15"
+					stroke="white"
+					stroke-width="2"></line>
+				<line
+					class="line line3"
+					x1="5"
+					y1="23"
+					x2="25"
+					y2="23"
+					stroke="white"
+					stroke-width="2"></line>
+			</svg>
+		</button>
+	</div>
 </header>
 
-<script>
-	import "../scripts/header";
-	
-</script>
+<script type="module" src="../src/scripts/header.js"></script>

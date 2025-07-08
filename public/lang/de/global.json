@@ -39,5 +39,13 @@
       "title": "Kontakt – Restaurant Airecel",
       "description": "Finden Sie unsere Adresse, Telefonnummer, E-Mail und Öffnungszeiten auf Mallorca."
     }
+  },
+  "header-seo": {
+    "logo": {
+      "label": "Zurück zur Startseite"
+    },
+    "menu": {
+      "label": "Menü öffnen"
+    }
   }
 }

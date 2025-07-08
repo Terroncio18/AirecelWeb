@@ -24,9 +24,9 @@
       "description": "Explore our Mediterranean menu, special dishes, and group options."
     },
     "events": {
-  "title": "Events - Airecel Restaurant",
-  "description": "Check out our upcoming music events and special activities at Airecel."
-},
+      "title": "Events - Airecel Restaurant",
+      "description": "Check out our upcoming music events and special activities at Airecel."
+    },
     "facilities": {
       "title": "Facilities - Airecel Restaurant",
       "description": "Discover our facilities: terrace, accessibility, views, and conference room."
@@ -38,6 +38,14 @@
     "contact": {
       "title": "Contact - Airecel Restaurant",
       "description": "Find our location, phone, email, and business hours in Mallorca."
+    }
+  },
+  "header-seo": {
+    "logo": {
+      "label": "Back to homepage"
+    },
+    "menu": {
+      "label": "Open menu"
     }
   }
 }

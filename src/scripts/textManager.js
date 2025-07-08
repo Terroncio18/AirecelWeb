@@ -36,6 +36,31 @@ export function updateMainMenu(content, containerId = "nav-container-sm") {
 
 
 ////////////////////////////////////////////////////
+//             Funciones header.astro             //
+////////////////////////////////////////////////////
+
+export async function updateHeaderAriaLabels() {
+  try {
+    const lang = getCurrentLanguage();
+    const res = await fetch(`/lang/${lang}/global.json`);
+    const localized = await res.json();
+
+    const logo = document.getElementById("logo-address");
+    const menuBtn = document.getElementById("toggleMenuBtn");
+
+    if (logo) {
+      logo.setAttribute("aria-label", localized["header-seo"]?.logo?.label || "Inicio");
+    }
+
+    if (menuBtn) {
+      menuBtn.setAttribute("aria-label", localized["header-seo"]?.menu?.label || "Abrir menú");
+    }
+  } catch (error) {
+    console.error("Error al actualizar los aria-labels del header:", error);
+  }
+}
+
+//////////////////////////////////////////////////////
 //             Funciones events.astro             //
 ////////////////////////////////////////////////////
 
@@ -156,32 +181,42 @@ export async function renderMenusTitles() {
     const res = await fetch(`/lang/${lang}/menus.json`);
     const localized = await res.json();
 
-    // Actualiza el título principal
+    // Título principal
     const mainTitle = document.getElementById("menus-title");
     if (mainTitle) mainTitle.textContent = localized.title;
 
-    // Listado de secciones
-    const sections = ["carta", "special", "snack", "groups", "wines"];
+    // Recorremos todas las claves excepto "title"
+    Object.entries(localized).forEach(([key, value]) => {
+      if (key === "title") return;
 
-    sections.forEach((section) => {
-      const titleSpan = document.getElementById(`${section}-title`);
-      const descSpan = document.getElementById(`${section}-description`);
-      const anchor = document.getElementById(`${section}-address`);
+      const title = value?.title || "";
+      const description = value?.description || "";
+      const href = value?.href || "";
 
-      // Título y descripción
-      if (titleSpan) titleSpan.textContent = localized[section]?.title || "";
-      if (descSpan) descSpan.textContent = localized[section]?.description || "";
+      const titleSpan = document.getElementById(`${key}-title`);
+      const descSpan = document.getElementById(`${key}-description`);
+      const anchor = document.getElementById(`${key}-address`);
 
-      // Solo la carta tiene href variable según idioma
-      if (section === "carta" && anchor) {
-        anchor.href = `/pdfs/carta-${lang}.pdf`;
+      if (titleSpan) titleSpan.textContent = title;
+      if (descSpan) descSpan.textContent = description;
+
+      if (anchor) {
+        // Accesibilidad
+        anchor.setAttribute("aria-label", `${title}. ${description}`);
+
+        // Evitar enlaces vacíos (Lighthouse error)
+        if (href) {
+          anchor.href = href;
+        } else {
+          anchor.removeAttribute("href");
+        }
       }
     });
-
   } catch (error) {
     console.error("Error al actualizar títulos de los menús:", error);
   }
 }
+
 
 ////////////////////////////////////////////////////
 //           Funciones Facilities.astro           //

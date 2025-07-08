@@ -1,0 +1,22 @@
+{
+    "aforo": {
+        "title": "Aforo y Distribución",
+        "content": "Airecel ofrece un espacio amplio y cómodo con <strong>24 mesas interiores</strong> y otras <strong>24 en la terraza exterior</strong>. El interior cuenta con un aforo de <strong>hasta 80 personas</strong>, ideal para reuniones familiares, celebraciones o cenas íntimas. La terraza puede acoger hasta <strong>50 personas</strong>, rodeadas de un ambiente relajado y vistas abiertas al entorno del hotel."
+    },
+    "comfort": {
+        "title": "Climatización y Comodidad",
+        "content": "El restaurante está totalmente equipado con <strong>aire acondicionado y calefacción</strong> para mantener la temperatura perfecta durante todo el año. En la terraza, contamos con <strong>sombrillas y ventiladores</strong> para ofrecer sombra y frescor incluso en los días más calurosos, garantizando el máximo confort para nuestros clientes."
+    },
+    "access": {
+        "title": "Accesibilidad",
+        "content": "Airecel está completamente adaptado para personas con movilidad reducida. No hay <strong>escalones ni barreras arquitectónicas</strong> que dificulten el acceso. Además, disponemos de <strong>baños accesibles</strong> para hombres, mujeres y personas con discapacidad."
+    },
+    "views": {
+        "title": "Vistas",
+        "content": "Nuestro restaurante se abre a la <strong>terraza del Hotel Aimia</strong>, ofreciendo un entorno agradable para comer al aire libre, rodeado de tranquilidad y vistas abiertas."
+    },
+    "services": {
+        "title": "Servicios y Extras",
+        "content": "Ofrecemos <strong>parking privado</strong> para clientes, asegurando comodidad desde el primer momento. También disponemos de <strong>una sala de conferencias</strong> ideal para <strong>reuniones de empresa</strong> que deseen continuar con una comida o cena en el restaurante."
+    }
+}

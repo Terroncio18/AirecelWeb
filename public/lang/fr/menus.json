@@ -1,0 +1,23 @@
+{
+    "title": "Nos Menus",
+    "carta": {
+        "title": "Carte",
+        "description": "Découvrez notre sélection complète de plats."
+    },
+    "special": {
+        "title": "Aires de Mallorca",
+        "description": "Notre menu spécial de dégustation"
+    },
+    "snack": {
+        "title": "Snacks",
+        "description": "Des bouchées rapides et savoureuses à tout moment."
+    },
+    "groups": {
+        "title": "Groupes",
+        "description": "Menu pour groupes de 10 personnes ou plus"
+    },
+    "wines": {
+        "title": "Vins",
+        "description": "Une sélection raffinée de vins locaux et internationaux."
+    }
+}

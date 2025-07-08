@@ -24,9 +24,9 @@
       "description": "Découvrez notre carte méditerranéenne, nos plats spéciaux et nos options pour groupes."
     },
     "events": {
-  "title": "Événements - Restaurant Airecel",
-  "description": "Découvrez nos prochains événements musicaux et activités spéciales chez Airecel."
-},
+      "title": "Événements - Restaurant Airecel",
+      "description": "Découvrez nos prochains événements musicaux et activités spéciales chez Airecel."
+    },
     "facilities": {
       "title": "Installations - Restaurant Airecel",
       "description": "Découvrez nos installations : terrasse, accessibilité, vues et salle de conférence."
@@ -40,5 +40,4 @@
       "description": "Trouvez notre adresse, numéro de téléphone, email et horaires à Majorque."
     }
   }
-  
 }

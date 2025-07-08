@@ -1,0 +1,49 @@
+{
+    "title": "Blog des Restaurants Airecel",
+    "subtitle": "Entdecken Sie mediterrane Köstlichkeiten",
+    "intro": "Willkommen in unserem kulinarischen Paradies, wo die Mittelmeersonne auf feine Küche trifft. Tauchen Sie ein in die Kunst der mediterranen Küche mit lokalen Geheimnissen, Rezepten und vielem mehr.",
+    "entries": {
+        "paella": {
+            "title": "Das Geheimnis unserer Paella",
+            "description": "Wir verraten, wie wir eine authentische Paella zubereiten, die unsere Gäste begeistert.",
+            "image": "/img/blogs/paella.jpg",
+            "date": "2024-05-01"
+        },
+        "lechona": {
+            "title": "Mallorquinisches Spanferkel aus dem Ofen",
+            "description": "Eine heiße Tradition – so bereiten wir die Lechona bei Airecel zu.",
+            "image": "/img/blogs/lechona.jpg",
+            "date": "2024-05-10"
+        },
+        "mateo": {
+            "title": "Im Gespräch mit Küchenchef Mateo",
+            "description": "Unser Küchenchef teilt seine Vision, Leidenschaft und kulinarischen Geheimnisse.",
+            "image": "/img/blogs/mateo.jpg",
+            "date": "2024-05-15"
+        },
+        "caldereta": {
+            "title": "Meeresfrüchte-Caldereta: Geschmack des Meeres",
+            "description": "Ein balearischer Klassiker mit dem besonderen Airecel-Touch.",
+            "image": "/img/blogs/caldereta.jpg",
+            "date": "2024-06-01"
+        },
+        "pascua": {
+            "title": "Osteraromen",
+            "description": "Traditionelle Gerichte zu Ostern und ihre Geschichte.",
+            "image": "/img/blogs/pascua.jpg",
+            "date": "2024-03-28"
+        },
+        "naranjas": {
+            "title": "Das Sóller-Tal und seine Orangen",
+            "description": "Erfahren Sie mehr über die Bedeutung der Orangen in unserer Küche und Kultur.",
+            "image": "/img/blogs/naranjas.jpg",
+            "date": "2024-04-18"
+        },
+        "gambas": {
+            "title": "Rote Garnele aus Sóller",
+            "description": "Eines unserer Top-Produkte – so servieren wir sie im Airecel.",
+            "image": "/img/blogs/gambas.jpg",
+            "date": "2024-04-30"
+        }
+    }
+}

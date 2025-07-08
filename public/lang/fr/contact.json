@@ -1,0 +1,15 @@
+{
+    "title": "Contactez-nous",
+    "intro": "Nous sommes ravis de vous aider.",
+    "address": "Carrer Santa Maria, 2 · Port de Sóller, Majorque",
+    "hours": "Ouvert tous les jours de 12h30 à 15h30 et de 19h00 à 21h30",
+    "form": {
+        "name": "Nom",
+        "email": "E-mail",
+        "message": "Message",
+        "submit": "Envoyer",
+        "placeholderName": "Votre nom",
+        "placeholderEmail": "votre@email.com",
+        "placeholderMessage": "Écrivez votre message ici"
+    }
+}

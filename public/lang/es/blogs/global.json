@@ -1,0 +1,49 @@
+{
+    "title": "Blog del Restaurante Airecel",
+    "subtitle": "Descubre las delicias mediterráneas",
+    "intro": "Bienvenido a nuestro paraíso culinario, donde el sol mediterráneo se une a las delicias gastronómicas. Sumérgete con nosotros en el arte de la cocina mediterránea mientras compartimos secretos locales, recetas y más.",
+    "entries": {
+        "paella": {
+            "title": "El secreto de nuestra paella",
+            "description": "Te revelamos cómo preparamos una paella auténtica que enamora a nuestros comensales.",
+            "image": "/img/blogs/paella.jpg",
+            "date": "2024-05-01"
+        },
+        "lechona": {
+            "title": "Lechona mallorquina al horno",
+            "description": "Una tradición que se sirve caliente. Así cocinamos la lechona en Airecel.",
+            "image": "/img/blogs/lechona.jpg",
+            "date": "2024-05-10"
+        },
+        "mateo": {
+            "title": "Conversando con el chef Mateo",
+            "description": "Nuestro chef comparte su visión, pasiones y secretos culinarios.",
+            "image": "/img/blogs/mateo.jpg",
+            "date": "2024-05-15"
+        },
+        "caldereta": {
+            "title": "Caldereta de mariscos: sabor a mar",
+            "description": "Un clásico balear reinventado con el toque Airecel.",
+            "image": "/img/blogs/caldereta.jpg",
+            "date": "2024-06-01"
+        },
+        "pascua": {
+            "title": "Sabores de Pascua",
+            "description": "Los platos típicos que servimos en Semana Santa y su historia.",
+            "image": "/img/blogs/pascua.jpg",
+            "date": "2024-03-28"
+        },
+        "naranjas": {
+            "title": "El valle de Sóller y sus naranjas",
+            "description": "Explora la importancia de las naranjas en nuestra cocina y cultura.",
+            "image": "/img/blogs/naranjas.jpg",
+            "date": "2024-04-18"
+        },
+        "gambas": {
+            "title": "Gamba roja de Sóller",
+            "description": "Uno de nuestros productos estrella y cómo lo servimos en Airecel.",
+            "image": "/img/blogs/gambas.jpg",
+            "date": "2024-04-30"
+        }
+    }
+}

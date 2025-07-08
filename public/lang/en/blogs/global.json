@@ -1,0 +1,49 @@
+{
+    "title": "Airecel Restaurant Blog",
+    "subtitle": "Discover Mediterranean Delights",
+    "intro": "Welcome to our culinary paradise, where the Mediterranean sun meets delicious cuisine. Dive into the art of Mediterranean cooking as we share local secrets, recipes, and more.",
+    "entries": {
+        "paella": {
+            "title": "The Secret Behind Our Paella",
+            "description": "We reveal how we prepare an authentic paella that captivates our guests.",
+            "image": "/img/blogs/paella.jpg",
+            "date": "2024-05-01"
+        },
+        "lechona": {
+            "title": "Mallorcan Roast Lechona",
+            "description": "A tradition served hot. This is how we cook lechona at Airecel.",
+            "image": "/img/blogs/lechona.jpg",
+            "date": "2024-05-10"
+        },
+        "mateo": {
+            "title": "A Talk with Chef Mateo",
+            "description": "Our chef shares his vision, passions, and culinary secrets.",
+            "image": "/img/blogs/mateo.jpg",
+            "date": "2024-05-15"
+        },
+        "caldereta": {
+            "title": "Seafood Caldereta: Taste of the Sea",
+            "description": "A Balearic classic reinvented with the Airecel touch.",
+            "image": "/img/blogs/caldereta.jpg",
+            "date": "2024-06-01"
+        },
+        "pascua": {
+            "title": "Easter Flavors",
+            "description": "Typical Easter dishes we serve and their history.",
+            "image": "/img/blogs/pascua.jpg",
+            "date": "2024-03-28"
+        },
+        "naranjas": {
+            "title": "The Sóller Valley and Its Oranges",
+            "description": "Explore the importance of oranges in our cuisine and culture.",
+            "image": "/img/blogs/naranjas.jpg",
+            "date": "2024-04-18"
+        },
+        "gambas": {
+            "title": "Sóller’s Red Prawn",
+            "description": "One of our star products and how we serve it at Airecel.",
+            "image": "/img/blogs/gambas.jpg",
+            "date": "2024-04-30"
+        }
+    }
+}

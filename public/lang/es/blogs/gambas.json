@@ -1,0 +1,69 @@
+{
+    "title": "La gamba roja de Sóller, una delicia gastronómica",
+    "image": "/img/blogs/gambas.jpg",
+    "body": [
+        {
+            "type": "paragraph",
+            "content": "Enclavado en el corazón de Mallorca, Port de Soller siempre ha sido un lugar donde los sabores se encuentran con el mar, creando magia culinaria. En el Restaurante Airecel, nos complace presentarle uno de los tesoros más emblemáticos y deliciosos de este paraíso costero: la Gamba Roja de Sóller."
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "content": "La revelación de la gamba roja"
+        },
+        {
+            "type": "paragraph",
+            "content": "Descubra la vibrante historia y la importancia de la gamba roja para la cocina local. Descubra cómo esta joya carmesí ha cautivado los corazones y los paladares de lugareños y visitantes durante generaciones."
+        },
+        {
+            "type": "paragraph",
+            "content": "En el corazón de Sóller, donde las azules aguas del Mediterráneo se encuentran con la escarpada costa, se esconde una joya culinaria: la Gamba Roja. Este crustáceo de color carmesí es más que un simple marisco: es un símbolo de tradición y un testimonio de la generosidad de nuestras aguas."
+        },
+        {
+            "type": "paragraph",
+            "content": "Desde hace siglos, la gamba roja es un manjar apreciado en la cocina mallorquina. Su carne dulce y suculenta y su color vibrante la han convertido en una estrella de nuestra historia gastronómica. La historia de la gamba roja está entrelazada con el patrimonio de Sóller, y su significado va más allá de la mesa."
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "content": "Preparación y presentación"
+        },
+        {
+            "type": "paragraph",
+            "content": "Nuestra receta busca resaltar la pureza del producto con una cocción delicada y acompañamientos mediterráneos."
+        },
+        {
+            "type": "image",
+            "src": "/img/blogs/gambas-close.jpg",
+            "alt": "Gambas rojas recién cocinadas"
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "content": "Nuestros platos con gamba roja"
+        },
+        {
+            "type": "paragraph",
+            "content": "En nuestro restaurante puedes disfrutar de la gamba roja en distintas elaboraciones:"
+        },
+        {
+            "type": "list",
+            "style": "unordered",
+            "items": [
+                "Gamba roja a la plancha con sal marina",
+                "Tartar de gamba roja y aguacate",
+                "Caldereta mallorquina con gamba roja",
+                "Gamba roja al ajillo"
+            ]
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "content": "Visítanos y descubre su sabor"
+        },
+        {
+            "type": "paragraph",
+            "content": "En Airecel te esperamos para ofrecerte una experiencia culinaria auténtica con productos locales de calidad como la gamba roja de Sóller."
+        }
+    ]
+}

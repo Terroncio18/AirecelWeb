@@ -16,9 +16,7 @@ export function initFullMenu() {
 
 function renderCurrentMenu() {
 	const content = window.currentLang?.[currentContentKey];
-	const showBack = false;
-
 	if (content) {
-		updateMainMenu(content, currentContainerId, showBack);
+		updateMainMenu(content, currentContainerId);
 	}
 }

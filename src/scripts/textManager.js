@@ -1,9 +1,10 @@
 ///  src/scripts/textManager.js
-
+//Helper
+import { getCurrentLanguage } from "./language.js";
 ////////////////////////////////////////////////////
 //             Funciones fullMenu.astro           //
 ////////////////////////////////////////////////////
-export function updateMainMenu(content, containerId = "nav-container-sm", showBack = false) {
+export function updateMainMenu(content, containerId = "nav-container-sm") {
   const navContainer = document.getElementById(containerId);
   if (!navContainer || !content) return;
 
@@ -25,7 +26,7 @@ export function updateMainMenu(content, containerId = "nav-container-sm", showBa
       link.href = `/${key}`;
     }
 
-
+    navContainer.innerHTML = '';
     newDiv.appendChild(link);
   });
 
@@ -61,9 +62,9 @@ export async function renderEvents(containerId = "events-list") {
   container.innerHTML = "Cargando eventos...";
 
   try {
-    const lang = localStorage.getItem("preferredLanguage") || "es";
+    const lang = getCurrentLanguage();
 
-    const res = await fetch("/lang/events.json");
+    const res = await fetch("/lang/shared/events.json");
     const events = await res.json();
 
     container.innerHTML = "";
@@ -151,11 +152,9 @@ export function updateFooterText() {
 
 export async function renderMenusTitles() {
   try {
-    const lang = localStorage.getItem("preferredLanguage") || "es";
-    const res = await fetch("/lang/menus.json");
-    const data = await res.json();
-
-    const localized = data.locales[lang] || data.locales["es"];
+    const lang = getCurrentLanguage();
+    const res = await fetch(`/lang/${lang}/menus.json`);
+    const localized = await res.json();
 
     // Actualiza el título principal
     const mainTitle = document.getElementById("menus-title");
@@ -191,11 +190,9 @@ export async function renderMenusTitles() {
 
 export async function renderFacilitiesContent() {
   try {
-    const lang = localStorage.getItem("preferredLanguage") || "es";
-    const res = await fetch("/lang/facilities.json");
-    const data = await res.json();
-
-    const localized = data[lang] || data["es"];
+    const lang = getCurrentLanguage();
+    const res = await fetch(`/lang/${lang}/facilities.json`);
+    const localized = await res.json();
 
     const sections = [
       { key: "aforo", data: localized.aforo },
@@ -225,10 +222,10 @@ export async function renderFacilitiesContent() {
 
 export async function renderContactContent() {
   try {
-    const lang = localStorage.getItem("preferredLanguage") || "es";
-    const res = await fetch("/lang/contact.json");
-    const data = await res.json();
-    const localized = data[lang] || data["es"];
+    const lang = getCurrentLanguage();
+    const res = await fetch(`/lang/${lang}/contact.json`);
+    const localized = await res.json();
+
 
     // Textos estáticos
     document.getElementById("contact-title").textContent = localized.title;
@@ -262,11 +259,10 @@ export async function renderBlogEntries(containerId = "blogs-list") {
   container.innerHTML = "Cargando entradas...";
 
   try {
-    const lang = localStorage.getItem("preferredLanguage") || "es";
-    const res = await fetch("/lang/blogs.json");
-    const data = await res.json();
+    const lang = getCurrentLanguage();
+    const res = await fetch(`/lang/${lang}/blogs/global.json`);
+    const localized = await res.json();
 
-    const localized = data[lang] || data["es"];
     const entries = localized.entries;
 
     container.innerHTML = "";
@@ -293,7 +289,12 @@ export async function renderBlogEntries(containerId = "blogs-list") {
 
       const date = document.createElement("span");
       date.className = "blog-date";
-      date.textContent = blog.date;
+
+      const formattedDate = new Intl.DateTimeFormat(lang, {
+        dateStyle: "long" // puedes usar "medium" o "short" si prefieres
+      }).format(new Date(blog.date));
+
+      date.textContent = formattedDate;
 
       info.appendChild(title);
       info.appendChild(description);

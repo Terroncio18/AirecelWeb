@@ -2,7 +2,7 @@
 
 export async function changeLanguage(language) {
 	try {
-		const response = await fetch(`/lang/${language}.json`);
+		const response = await fetch(`/lang/${language}/global.json`);
 		if (!response.ok) throw new Error(`Error loading language: ${language}`);
 
 		const langData = await response.json();
@@ -14,7 +14,7 @@ export async function changeLanguage(language) {
 		// Actualizar el atributo lang del <html>
 		document.documentElement.lang = language;
 		updateMetadata(langData);
-		
+
 		document.dispatchEvent(new CustomEvent("languageChanged", {
 			detail: { language }
 		}));
@@ -25,7 +25,7 @@ export async function changeLanguage(language) {
 
 export function initLanguage() {
 	const flagsElements = document.querySelectorAll(".lang_flags");
-	const savedLanguage = localStorage.getItem("preferredLanguage") || "es";
+	const savedLanguage = getCurrentLanguage();
 
 	changeLanguage(savedLanguage);
 
@@ -66,3 +66,6 @@ function updateMetadata(languageData) {
 	descTag.content = meta.description;
 }
 
+export function getCurrentLanguage() {
+	return localStorage.getItem("preferredLanguage") || "es";
+}

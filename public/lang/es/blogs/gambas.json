@@ -26,11 +26,15 @@
         {
             "type": "heading",
             "level": 2,
-            "content": "Preparación y presentación"
+            "content": "Una obra maestra culinaria"
         },
         {
             "type": "paragraph",
-            "content": "Nuestra receta busca resaltar la pureza del producto con una cocción delicada y acompañamientos mediterráneos."
+            "content": "En el Restaurante Airecel, nos enorgullecemos de elaborar obras maestras culinarias que rinden homenaje al legado de la Gamba Roja. Nuestros expertos chefs se inspiran tanto en la tradición como en la innovación para sacar el máximo partido de los sabores de este extraordinario marisco."
+        },
+        {
+            "type": "paragraph",
+            "content": "Desde el momento en que se pescan nuestras gambas rojas hasta la presentación final en el plato, cada paso es una labor de amor. Tanto si prefiere preparaciones clásicas que resalten el dulzor natural de la gamba como creaciones atrevidas que jueguen con las texturas y las especias, nuestra carta es un testimonio de la versatilidad de este exquisito ingrediente."
         },
         {
             "type": "image",
@@ -59,11 +63,28 @@
         {
             "type": "heading",
             "level": 2,
-            "content": "Visítanos y descubre su sabor"
+            "content": "Abastecimiento sostenible"
         },
         {
             "type": "paragraph",
-            "content": "En Airecel te esperamos para ofrecerte una experiencia culinaria auténtica con productos locales de calidad como la gamba roja de Sóller."
+            "content": "En Airecel Restaurant creemos en la conservación de la belleza de nuestros océanos para las generaciones futuras. Por eso nos dedicamos a las prácticas de abastecimiento sostenible en lo que respecta a nuestra gamba roja. Colaboramos estrechamente con pescadores locales que comparten nuestro compromiso de proteger el ecosistema marino."
+        },
+        {
+            "type": "paragraph",
+            "content": "Nuestras gambas rojas proceden de fuentes locales y responsables, lo que garantiza que cada delicioso bocado deje una huella ecológica mínima. Al elegir nuestros platos de Gamba Roja, no sólo saboreará los sabores de Sóller, sino que también contribuirá a la conservación de sus prístinas aguas."
+        },
+        {
+            "type": "heading",
+            "level": 2,
+            "content": "Visítenos en Port de Sóller..."
+        },
+        {
+            "type": "paragraph",
+            "content": "Mientras recorre las encantadoras calles del Port de Soller, le invitamos a que haga una parada en el Restaurante Airecel y experimente por sí mismo la magia de la Gamba Roja. No es sólo una comida; es una conexión con el alma de Sóller, un sabor a tradición y un compromiso con la sostenibilidad."
+        },
+        {
+            "type": "paragraph",
+            "content": "Esperamos darle la bienvenida a nuestro restaurante, donde cada plato de Gamba Roja es un homenaje a la esencia del patrimonio culinario de Sóller."
         }
     ]
 }
